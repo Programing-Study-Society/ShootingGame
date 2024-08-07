@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 1893154575}
   - component: {fileID: 1893154577}
   - component: {fileID: 1893154576}
+  - component: {fileID: 1893154578}
   m_Layer: 5
   m_Name: scoretext
   m_TagString: Untagged
@@ -320,7 +321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -364.78113, y: 225.8327}
+  m_AnchoredPosition: {x: -254.58, y: 161.63}
   m_SizeDelta: {x: 370.4377, y: 64.3346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893154576
@@ -365,6 +366,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893154574}
   m_CullTransparentMesh: 1
+--- !u!114 &1893154578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893154574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29269428a2085ea47aa4e4efd0dd7a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score_object: {fileID: 1893154574}
 --- !u!1 &1901999991
 GameObject:
   m_ObjectHideFlags: 0
