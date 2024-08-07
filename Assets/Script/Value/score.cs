@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class score : MonoBehaviour
+public class Score : MonoBehaviour
 {
     public GameObject score_object;
 
@@ -17,7 +17,6 @@ public class score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        score_text.text = "000000";
+        Text score_text.text = "000000";
     }
 }
