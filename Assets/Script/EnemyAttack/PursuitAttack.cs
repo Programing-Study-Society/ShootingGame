@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletAttack1 : MonoBehaviour
+public class PursuitAttack: MonoBehaviour
 {
     [SerializeField, Header("playerオブジェクト")]
     private GameObject player;
@@ -26,19 +26,27 @@ public class bulletAttack1 : MonoBehaviour
         shooting();
     }
 
+    //追尾攻撃
     private void shooting()
     {
+        //shootTimeの値分待たないと実行しない
         shootCount += Time.deltaTime;
         if (shootCount < shootTime) return;
 
-        GameObject atkObj = Instantiate(attack1);
-        atkObj.transform.position = transform.position + 
+        //アタックオブジェクト生成
+        GameObject atkObj1 = Instantiate(attack1);
+
+        //アタックオブジェクトの座標設定
+        atkObj1.transform.position = transform.position + 
             new Vector3(0f,transform.lossyScale.y / 2.0f,0f);
 
+        //プレイヤーの座標とエネミーの座標との間のベクトル計算
         Vector3 dir = player.transform.position - transform.position;
 
-        atkObj.transform.rotation = Quaternion.FromToRotation(transform.up, dir);
+        //オブジェクトの向きをdirのベクトルの方向に変更
+        atkObj1.transform.rotation = Quaternion.FromToRotation(transform.up, dir);
 
+        //カウントを初期化する
         shootCount = 0f;
     }
 }
