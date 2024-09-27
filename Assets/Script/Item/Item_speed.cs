@@ -3,26 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public float speed;
+
 public class Item_speed : MonoBehaviour
 {
-
+    private float speed;
+    public moveController control;
+    private string playerTag = "Player";
     
     void OnTriggerEnter2D(Collider2D other)
+    //何が当たったか
 {
-    if (other.gameObject.CompareTag("Item"))
+    if (other.gameObject.CompareTag("Player"))
     {
         // 強化処理
-        //speed += 2;
+        control.speed *= 2;
 
         // アイテムを消す
-        Destroy(other.gameObject);
+        Destroy(this.gameObject);
     }
+}
+    private void OnCollisionEnter2D(Collision2D collision)
+{
+        if (collision.collider.tag == playerTag)
+        {
+            Debug.Log("プレイヤーと接触した！");
+        }
 }
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = control.speed;
     }
 
     // Update is called once per frame

@@ -9,7 +9,7 @@ public class Item_Shot : MonoBehaviour
     if (other.gameObject.CompareTag("Item"))
     {
         // 強化処理
-        //moveSpeed += 2;
+        // += 2;
 
         // アイテムを消す
         Destroy(other.gameObject);
