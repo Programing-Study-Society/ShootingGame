@@ -16,25 +16,25 @@ public class moveController : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.RightArrow))
-        {// ‰E•ûŒü‚ÌˆÚ“®“ü—Í
+        {// ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½ÌˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
             Vector2 pos = transform.position;
             pos.x += speed;
             transform.position = pos;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
-        {// ¶•ûŒü‚ÌˆÚ“®“ü—Í
+        {// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
             Vector2 pos = transform.position;
             pos.x -= speed;
             transform.position = pos;
         }
         else if (Input.GetKey(KeyCode.UpArrow))
-        {// ã•ûŒü‚ÌˆÚ“®“ü—Í
+        {// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
             Vector2 pos = transform.position;
             pos.y += speed;
             transform.position = pos;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
-        {// ‰º•ûŒü‚ÌˆÚ“®“ü—Í
+        {// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
             Vector2 pos = transform.position;
             pos.y -= speed;
             transform.position = pos;
