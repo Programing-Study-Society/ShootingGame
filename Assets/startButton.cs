@@ -4,6 +4,7 @@ using UnityEngine;
 //ライブラリの追加
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class startButton : MonoBehaviour {  
     //始まった時に実行する関数　　
     void Start (){ 
@@ -12,5 +13,13 @@ public class startButton : MonoBehaviour {
         // StartGame関数　
         void StartGame() { 
             // GameSceneをロード　
-            SceneManager.LoadScene("GameScene"); } 
+            SceneManager.LoadScene("GameScene"); 
+        gameObject.GetComponent<Button>().onClick.AddListener(StartGame); 
+    } 
+
+    // StartGame関数　
+    public void StartButton() { 
+        // GameSceneをロード　
+        SceneManager.LoadScene("GameScene"); 
+    } 
 }
