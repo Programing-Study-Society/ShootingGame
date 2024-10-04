@@ -8,9 +8,9 @@ public class startButton : MonoBehaviour {
     //始まった時に実行する関数　　
     void Start (){ 
         //ボタンが押された時、StartGame関数を実行　
-        gameObject.GetComponent<Button>().onClick.AddListener(StartaGame); } 
+        gameObject.GetComponent<Button>().onClick.AddListener(StartGame); } 
         // StartGame関数　
-        Void StartGame() { 
+        void StartGame() { 
             // GameSceneをロード　
             SceneManager.LoadScene("GameScene"); } 
 }
