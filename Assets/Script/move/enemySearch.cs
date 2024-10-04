@@ -9,7 +9,7 @@ public class enemySearch : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        playerTr = GameObject.FindGameObjectWithTag("player").transform;
+        playerTr = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
