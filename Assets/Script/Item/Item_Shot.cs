@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class Item_Shot : MonoBehaviour
 {    
+    //private 
+    public moveController control;
+    private string playerTag = "Player";
+
     void OnTriggerEnter2D(Collider2D other)
 {
-    if (other.gameObject.CompareTag("Item"))
+    if (other.gameObject.CompareTag("Player"))
     {
-        // 強化処理
-        // += 2;
+        // 弾の強化処理
+        // ;
 
         // アイテムを消す
-        Destroy(other.gameObject);
+        Destroy(this.gameObject);
     }
+}
+    private void OnCollisionEnter2D(Collision2D collision)
+{
+        if (collision.collider.tag == playerTag)
+        {
+            Debug.Log("プレイヤーと接触した！");
+        }
 }
     // Start is called before the first frame update
     void Start()
     {
-        
+        //falseで置いとくやつ
     }
 
     // Update is called once per frame

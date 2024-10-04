@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item_Shotspeed : MonoBehaviour
 {
+    //private float speed;
+    public moveController control;
     private string playerTag = "Player";
     void OnTriggerEnter2D(Collider2D other)
 {
@@ -13,8 +15,15 @@ public class Item_Shotspeed : MonoBehaviour
         // += 2;
 
         // アイテムを消す
-        Destroy(other.gameObject);
+        Destroy(this.gameObject);
     }
+}
+    private void OnCollisionEnter2D(Collision2D collision)
+{
+        if (collision.collider.tag == playerTag)
+        {
+            Debug.Log("プレイヤーと接触した！");
+        }
 }
     // Start is called before the first frame update
     void Start()

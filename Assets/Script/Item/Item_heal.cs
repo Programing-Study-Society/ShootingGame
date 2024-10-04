@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class Item_heal : MonoBehaviour
 {
-    
+    private int playerHP;
+    public moveController control;
+    private string playerTag = "Player";
     void OnTriggerEnter2D(Collider2D other)
 {
-    if (other.gameObject.CompareTag("Item"))
+    if (other.gameObject.CompareTag("Player"))
     {
         // 強化処理
         GlovalValue.HP += 1;
 
         // アイテムを消す
-        Destroy(other.gameObject);
+        Destroy(this.gameObject);
     }
 }
 
@@ -28,7 +30,7 @@ public class Item_heal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHP = GlovalValue.HP;
     }
 
     // Update is called once per frame

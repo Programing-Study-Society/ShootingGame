@@ -15,7 +15,7 @@ public class Item_speed : MonoBehaviour
 {
     if (other.gameObject.CompareTag("Player"))
     {
-        // 強化処理
+        // 強化処理、プレイヤーの速さ
         control.speed *= 2;
 
         // アイテムを消す
