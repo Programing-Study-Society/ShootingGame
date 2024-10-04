@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThreeWayAttack : MonoBehaviour
+public class RandamAttack : MonoBehaviour
 {
-    [SerializeField, Header("playerƒIƒuƒWƒFƒNƒg")]
+     [SerializeField, Header("playerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ")]
     private GameObject player;
-    [SerializeField, Header("’eƒIƒuƒWƒFƒNƒg")]
+    [SerializeField, Header("å¼¾ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ")]
     private GameObject attack1;
-    [SerializeField, Header("’e‚ğ”­Ë‚·‚éŠÔ")]
+    [SerializeField, Header("å¼¾ã‚’ç™ºå°„ã™ã‚‹æ™‚é–“")]
     private float shootTime;
 
     private float shootCount;
-
-    private float attackInterval = 1.0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,37 +26,37 @@ public class ThreeWayAttack : MonoBehaviour
         shooting();
     }
 
-    //3•ûŒüUŒ‚
+    //3æ–¹å‘æ”»æ’ƒ
     private void shooting()
     {
-        //shootTime‚Ì’l•ª‘Ò‚½‚È‚¢‚ÆÀs‚µ‚È‚¢
+        //shootTimeã®å€¤åˆ†å¾…ãŸãªã„ã¨å®Ÿè¡Œã—ãªã„
         shootCount += Time.deltaTime;
         if (shootCount < shootTime) return;
 
-        //ƒAƒ^ƒbƒNƒIƒuƒWƒFƒNƒg¶¬
+        //ã‚¢ã‚¿ãƒƒã‚¯ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç”Ÿæˆ
         GameObject atkObj1 = Instantiate(attack1);
         GameObject atkObj2 = Instantiate(attack1);
         GameObject atkObj3 = Instantiate(attack1);
 
-        //ƒAƒ^ƒbƒNƒIƒuƒWƒFƒNƒg‚ÌÀ•Wİ’è
+        //ã‚¢ã‚¿ãƒƒã‚¯ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åº§æ¨™è¨­å®š
         atkObj1.transform.position = transform.position + 
             new Vector3(0f,transform.lossyScale.y / 2.0f,0f);
         atkObj2.transform.position = transform.position +
-            new Vector3(0f + attackInterval, transform.lossyScale.y / 2.0f, 0f);
+            new Vector3(0f, transform.lossyScale.y / 2.0f, 0f);
         atkObj3.transform.position = transform.position +
-            new Vector3(0f - attackInterval, transform.lossyScale.y / 2.0f, 0f);
+            new Vector3(0f, transform.lossyScale.y / 2.0f, 0f);
 
-        //ƒvƒŒƒCƒ„[‚ÌÀ•W‚©‚çƒGƒlƒ~[‚ÌÀ•W‚ğˆø‚¢‚Ä‚»‚ÌŠÔ‚ÌƒxƒNƒgƒ‹‚ğŒvZ
-        Vector3 dir1 = player.transform.position - transform.position;
-        Vector3 dir2 = player.transform.position - transform.position;
-        Vector3 dir3 = player.transform.position - transform.position;
+        //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™ã‹ã‚‰ã‚¨ãƒãƒŸãƒ¼ã®åº§æ¨™ã‚’å¼•ã„ã¦ãã®é–“ã®ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¨ˆç®—
+        Vector3 dir1 = new Vector3(randomF(), randomF(), 0.0f);
+        Vector3 dir2 = new Vector3(randomF(), randomF(), 0.0f);
+        Vector3 dir3 = new Vector3(randomF(), randomF(), 0.0f);
         
-        //ƒIƒuƒWƒFƒNƒg‚ÌŒü‚«‚ğdir‚ÌƒxƒNƒgƒ‹‚Ì•ûŒü‚É•ÏX
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å‘ãã‚’dirã®ãƒ™ã‚¯ãƒˆãƒ«ã®æ–¹å‘ã«å¤‰æ›´
         atkObj1.transform.rotation = Quaternion.FromToRotation(transform.up, dir1);
         atkObj2.transform.rotation = Quaternion.FromToRotation(transform.up, dir2);
         atkObj3.transform.rotation = Quaternion.FromToRotation(transform.up, dir3);
 
-        //ƒJƒEƒ“ƒg‚ğ‰Šú‰»‚·‚é
+        //ã‚«ã‚¦ãƒ³ãƒˆã‚’åˆæœŸåŒ–ã™ã‚‹
         shootCount = 0f;
     }
 
@@ -66,5 +65,5 @@ public class ThreeWayAttack : MonoBehaviour
         float dir = Random.Range(-1.0f, 1.0f);
 
         return dir;
-    } 
+    }
 }

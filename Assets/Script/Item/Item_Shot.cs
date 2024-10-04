@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item_Shot : MonoBehaviour
 {    
-    //private 
+    public static int attack = 1;
     public moveController control;
     private string playerTag = "Player";
 
@@ -13,7 +13,7 @@ public class Item_Shot : MonoBehaviour
     if (other.gameObject.CompareTag("Player"))
     {
         // 弾の強化処理
-        // ;
+        attack += 1;
 
         // アイテムを消す
         Destroy(this.gameObject);
@@ -29,7 +29,7 @@ public class Item_Shot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //falseで置いとくやつ
+        
     }
 
     // Update is called once per frame

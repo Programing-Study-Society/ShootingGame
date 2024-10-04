@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LinearMovement: MonoBehaviour
 {
-    [SerializeField, Header("’e‘¬")]
+    [SerializeField, Header("??")]
     private float speed;
-    [SerializeField, Header("’e‚ÌˆÐ—Í")]
+    [SerializeField, Header("????")]
     private int power;
 
     private Rigidbody2D rigid;
