@@ -12,7 +12,6 @@ public class leftClickAttack : MonoBehaviour
 
     private float shootCount;
 
-
     //強化されているかどうか判別する変数
     public bool attackStrengthening = false;
 
@@ -33,7 +32,11 @@ public class leftClickAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AttackControl();
+    }
 
+    private void AttackControl()
+    {
         // 左クリックされたとき実行
         if (Input.GetMouseButton(0))
         {
@@ -43,7 +46,7 @@ public class leftClickAttack : MonoBehaviour
 
             //攻撃オブジェクト生成
             atkObj1 = Instantiate(Attack);
-            
+
             //強化されていた場合+2
             if (attackStrengthening)
             {
@@ -54,8 +57,8 @@ public class leftClickAttack : MonoBehaviour
             //攻撃オブジェクト生成初期位置値
             atkObj1.transform.position = transform.position +
                 new Vector3(0f, transform.lossyScale.y / 2.0f, 0f);
-            
-            
+
+
             //Debug.Log(atkObj1.transform.position);
             if (attackStrengthening)
             {
@@ -64,9 +67,9 @@ public class leftClickAttack : MonoBehaviour
 
                 atkObj3.transform.position = transform.position +
                     new Vector3(0f - attackInterval, (transform.lossyScale.y / 2.0f), 0f);
-                
-                atkObj2.transform.rotation = Quaternion.Euler(0,0,-45);
-                atkObj3.transform.rotation = Quaternion.Euler(0,0,45);
+
+                atkObj2.transform.rotation = Quaternion.Euler(0, 0, -15);
+                atkObj3.transform.rotation = Quaternion.Euler(0, 0, 15);
             }
 
             //時間初期化
