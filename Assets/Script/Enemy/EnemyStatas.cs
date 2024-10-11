@@ -10,4 +10,12 @@ public class EnemyStatas : MonoBehaviour
     public int ATK;
     [SerializeField, Header("エネミーの速度")]
     public float SPD;
+
+    void Update()
+    {
+        if (HP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraChecker : MonoBehaviour
+public class CameraChecker : MonoBehaviour
 {
     enum Mode
     {
