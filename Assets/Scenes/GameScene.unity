@@ -302,11 +302,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 418840376}
+  - component: {fileID: 418840380}
   - component: {fileID: 418840379}
   - component: {fileID: 418840378}
   - component: {fileID: 418840377}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -376,7 +377,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 418840378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 418840380}
+        m_TargetAssemblyTypeName: DifficultyButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &418840378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +428,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418840375}
   m_CullTransparentMesh: 1
+--- !u!114 &418840380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418840375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab00d67fc8efc42a0dd2874d3a7bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 4
 --- !u!1 &463412487
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,11 +450,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463412488}
+  - component: {fileID: 463412492}
   - component: {fileID: 463412491}
   - component: {fileID: 463412490}
   - component: {fileID: 463412489}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Nomal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +525,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 463412490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 463412492}
+        m_TargetAssemblyTypeName: DifficultyButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &463412490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +576,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463412487}
   m_CullTransparentMesh: 1
+--- !u!114 &463412492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463412487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab00d67fc8efc42a0dd2874d3a7bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 2
 --- !u!1 &522304444
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,11 +1029,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985678426}
+  - component: {fileID: 985678430}
   - component: {fileID: 985678429}
   - component: {fileID: 985678428}
   - component: {fileID: 985678427}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Hard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1104,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 985678428}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 985678430}
+        m_TargetAssemblyTypeName: DifficultyButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &985678428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1155,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985678425}
   m_CullTransparentMesh: 1
+--- !u!114 &985678430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985678425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab00d67fc8efc42a0dd2874d3a7bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 3
 --- !u!1 &1307563513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,11 +1177,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307563514}
+  - component: {fileID: 1307563518}
   - component: {fileID: 1307563517}
   - component: {fileID: 1307563516}
   - component: {fileID: 1307563515}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Easy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1173,7 +1252,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1307563516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1307563518}
+        m_TargetAssemblyTypeName: DifficultyButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1307563516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,6 +1303,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307563513}
   m_CullTransparentMesh: 1
+--- !u!114 &1307563518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307563513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aab00d67fc8efc42a0dd2874d3a7bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!1 &1449296893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1556,7 @@ GameObject:
   - component: {fileID: 1649377731}
   - component: {fileID: 1649377730}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
