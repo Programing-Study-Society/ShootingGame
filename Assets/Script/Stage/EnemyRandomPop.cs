@@ -2,27 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPop : MonoBehaviour
+public class EnemyRandomPop : MonoBehaviour
 {
+    public GameObject mainCamera;
     public List<GameObject> popEnemy;
 
     public float lateTime = 1.0f;
     float time = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int popCount = 0;
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
-        if (time <= lateTime)
-            return;
-        Pop(popEnemy[0], new Vector3(0, 0, 0));
+        if (popCount > 10)
+        {
+            if (time <= lateTime * 10)
+                return;
+            popCount = 0;
+        }
+        else
+        {
+            if (time <= lateTime)
+                return;
+        }
+        Pop(popEnemy[Random.Range(0, popEnemy.Count)], new Vector3(Random.Range(-GlovalValue.xLimit, GlovalValue.xLimit), 
+                                     Random.Range(0.0f, GlovalValue.yLimit), 0));
         time = 0;
+        popCount++;
 
     }
 
@@ -31,7 +39,7 @@ public class EnemyPop : MonoBehaviour
     {
         //エネミーオブジェクト生成
         GameObject enemyObj1 = Instantiate(enemyObject);
-
+        initialPosition.y += GlovalValue.yLimit * 2;
         //エネミーオブジェクトの座標設定
         enemyObj1.transform.position = initialPosition;
 

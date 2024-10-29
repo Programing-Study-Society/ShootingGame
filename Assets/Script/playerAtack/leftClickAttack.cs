@@ -45,13 +45,13 @@ public class leftClickAttack : MonoBehaviour
             if (shootCount < shootTime) return;
 
             //攻撃オブジェクト生成
-            atkObj1 = Instantiate(Attack);
+            atkObj1 = Instantiate(Attack, transform.position, transform.rotation);
 
             //強化されていた場合+2
             if (attackStrengthening)
             {
-                atkObj2 = Instantiate(Attack);
-                atkObj3 = Instantiate(Attack);
+                atkObj2 = Instantiate(Attack, transform.position, transform.rotation);
+                atkObj3 = Instantiate(Attack, transform.position, transform.rotation);
             }
 
             //攻撃オブジェクト生成初期位置値
@@ -68,8 +68,12 @@ public class leftClickAttack : MonoBehaviour
                 atkObj3.transform.position = transform.position +
                     new Vector3(0f - attackInterval, (transform.lossyScale.y / 2.0f), 0f);
 
-                atkObj2.transform.rotation = Quaternion.Euler(0, 0, -15);
-                atkObj3.transform.rotation = Quaternion.Euler(0, 0, 15);
+                /*atkObj2.transform.rotation = Quaternion.Euler(transform.rotation.x,
+                    transform.rotation.y,
+                    transform.rotation.z - 15);
+                atkObj3.transform.rotation = Quaternion.Euler(transform.rotation.x,
+                    transform.rotation.y,
+                    transform.rotation.z + 15);*/
             }
 
             //時間初期化

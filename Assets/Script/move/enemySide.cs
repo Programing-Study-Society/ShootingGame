@@ -9,6 +9,6 @@ public class enemySide : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = new Vector3(Mathf.Sin(Time.time) * MoveSpeed, transform.position.y, transform.position.z);
-        //Debug.Log(Mathf.Sin(Time.time) * MoveSpeed);
+        Debug.Log(Mathf.Sin(Time.time) * MoveSpeed);
     }
 }

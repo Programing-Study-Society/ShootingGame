@@ -12,6 +12,11 @@ public static class GlovalValue
 
     //プレイヤーステータス
     public static int HP = 5;
-    public static int attack = 10;
+    public static int attack = 1;
+
+    //プレイヤーの動ける範囲
+    public static float xLimit;
+    public static float yLimit;
+
 
 }
