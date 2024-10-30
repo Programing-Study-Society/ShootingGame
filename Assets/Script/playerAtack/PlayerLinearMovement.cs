@@ -34,7 +34,7 @@ public class PlayerLinearMovement: MonoBehaviour
     private void Attack(){
         if(enemyCollision.IsEnemy()){
             EnemyStatas enemyStatas = enemyCollision.CollisionObject.GetComponent<EnemyStatas>();
-            enemyStatas.HP -= power;
+            enemyStatas.HP -= power * GlovalValue.attack;
             Destroy(this.gameObject);
         }
     }

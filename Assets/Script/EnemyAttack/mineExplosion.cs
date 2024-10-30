@@ -22,7 +22,7 @@ public class MineExplosion : MonoBehaviour
         if (isPlayerEnter)
         {
             GlovalValue.HP -= power;
-            //Debug.Log(GlovalValue.HP);
+            Debug.Log(GlovalValue.HP);
             Destroy(gameObject);
         }
     }

@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &538495495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1292550072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,7 +952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1536179118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1136,7 +1136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1736731710
 Transform:
   m_ObjectHideFlags: 0
@@ -1295,7 +1295,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1430,8 +1430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attack: {fileID: 937991920790414310, guid: f0ccc4edca33bf14baa565c63b089504, type: 3}
-  shootTime: 0.5
-  attackStrengthening: 0
+  shootTime: 0.3
+  attackStrengthening: 1
 --- !u!50 &1767498256
 Rigidbody2D:
   serializedVersion: 4
