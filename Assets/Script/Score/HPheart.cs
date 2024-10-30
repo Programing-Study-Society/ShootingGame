@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class HPheart : MonoBehaviour
 {
-    public int maxHP = GlovalValue.HP; // 最大HP
-    public int cullentHP = GlovalValue.HP; // 現在のHP
-    public GameObject LifeGaugePrefab; // ハートのプレハブ
-    public Transform LifeGauge; // ハートを配置する親オブジェクト
+    public int maxHP = 10; // 最大HP
+    public int currentHP; // 現在のHP
+    public GameObject heartPrefab; // ハートのプレハブ
+    public Transform heartsContainer; // ハートを配置する親オブジェクト
 
     private void Start()
     {
-        cullentHP = maxHP;
+        currentHP = maxHP;
         UpdateHearts();
     }
 
