@@ -1,43 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class moveController : MonoBehaviour
+public class moveController: MonoBehaviour
 {
     public float speed;
-    public Camera m_camera;
-    // Start is called before the first frame update
+    // 速度
+    public Vector2 SPEED = new Vector2(0.05f, 0.05f);
+    // Use this for initialization
     void Start()
     {
-        m_camera = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {// �E�����̈ړ�����
-            Vector2 pos = transform.position;
-            pos.x += speed;
-            transform.position = pos;
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {// �������̈ړ�����
-            Vector2 pos = transform.position;
-            pos.x -= speed;
-            transform.position = pos;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {// ������̈ړ�����
-            Vector2 pos = transform.position;
-            pos.y += speed;
-            transform.position = pos;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {// �������̈ړ�����
-            Vector2 pos = transform.position;
-            pos.y -= speed;
-            transform.position = pos;
-        }
+        // 移動処理
+        Move();
     }
+
+    // 移動関数
+    void Move()
+    {
+        // 現在位置をPositionに代入
+        float moveX = 0f;
+        float moveY = 0f;
+        Vector2 Position = transform.position;
+        // 左キーを押し続けていたら
+        if (Input.GetKey("left"))
+        {
+            // 代入したPositionに対して加算減算を行う
+            moveX -= SPEED.x;
+        }
+        else if (Input.GetKey("right"))
+        { // 右キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            moveX += SPEED.x;
+        }
+        if (Input.GetKey("up"))
+        { // 上キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            moveY += SPEED.y;
+        }
+        else if (Input.GetKey("down"))
+        { // 下キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            moveY -= SPEED.y;
+        }
+        if (moveX != 0f && moveY != 0f)
+        {
+            moveX /= 1.4f;
+            moveY /= 1.4f;
+        }
+        Position.x += moveX;
+        Position.y += moveY;
+        // 現在の位置に加算減算を行ったPositionを代入する
+        transform.position = Position;
+    }
+
+
 }
