@@ -46,7 +46,12 @@ public class StageTemplate : MonoBehaviour
         }
 
         //popCount数ポップしたら実行せず else へ
-        if (popCount <= popEnemyCount[stageCount])
+        //Debug.Log(stageCount);
+        if(stageCount >= popEnemy.Count)
+        {
+            return;
+        }
+        if (popCount < popEnemyCount[stageCount])
         {
             Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit, GlovalValue.xLimit),
                                  Random.Range(0.0f, GlovalValue.yLimit), 0));
