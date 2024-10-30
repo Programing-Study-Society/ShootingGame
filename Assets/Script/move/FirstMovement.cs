@@ -6,7 +6,9 @@ public class FirstMovement : MonoBehaviour
 {
     public float speed = 0.1f;
 
+    [HideInInspector]
     public bool firstMove = true;
+
     private Vector3 firstPos;
     private float MoveRange;
     // Start is called before the first frame update

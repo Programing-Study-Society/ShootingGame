@@ -13,6 +13,9 @@ public class StageTemplate : MonoBehaviour
     [SerializeField, Header("popしたいエネミーを順番に入れるリスト")]
     public List<GameObject> popEnemy;
 
+    [SerializeField, Header("popしたいエネミーの出現数を順番に入れるリスト")]
+    public List<int> popEnemyCount;
+
     [SerializeField, Header("エネミーポップ間の待ち時間")]
     public float lateTime = 1.0f;
 
@@ -37,32 +40,44 @@ public class StageTemplate : MonoBehaviour
         time += Time.deltaTime;
 
         //lateTime以上になったら実行
-        if (time > lateTime)
+        if (time < lateTime)
         {
-            //popCount数ポップしたら実行せず else へ
-            if (popCount < 10)
+            return;
+        }
+
+        //popCount数ポップしたら実行せず else へ
+        if (popCount <= popEnemyCount[stageCount])
+        {
+            Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit, GlovalValue.xLimit),
+                                 Random.Range(0.0f, GlovalValue.yLimit), 0));
+            popCount++;
+        }
+        else
+        {
+            //エネミーがいなくなったら実行
+            if (!enemyCollision.IsEnemy())
             {
-                Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit, GlovalValue.xLimit),
-                                     Random.Range(0.0f, GlovalValue.yLimit), 0));
-                popCount++;
-            }
-            else
-            {
-                //エネミーがいなくなったら実行
-                if (!enemyCollision.IsEnemy())
+                //popEnemyのリスト数以上になったら実行しない
+                if (popEnemy.Count >= stageCount)
                 {
-                    //popEnemyのリスト数以上になったら実行しない
-                    if (popEnemy.Count - 1 > stageCount)
+
+                    //次のエネミーをポップできるようにする
+                    stageCount += 1;
+                    //ポップ数の上限になったら終了
+                    if (stageCount >= popEnemy.Count)
                     {
-                        //次のエネミーをポップできるようにする
-                        stageCount += 1;
+                        Debug.Log("CLEAR");
+                    }
+                    else
+                    {
                         Debug.Log("stage:" + (stageCount + 1));
                         popCount = 0;
                     }
+
                 }
             }
-            time = 0;
         }
+        time = 0;
     }
 
     //ポップしたいオブジェクトと初期位置の値を入力したらポップできる

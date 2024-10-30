@@ -773,7 +773,7 @@ MonoBehaviour:
   HP: 20
   ATK: 3
   SPD: 10
---- !u!114 &1767498260
+--- !u!114 &1767498268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1767498251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b703fa6bfb3213c41ab640e3e0cdde1b, type: 3}
+  m_Script: {fileID: 11500000, guid: d44321905103e4242a9511c8efa89142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1830087065
@@ -990,6 +990,7 @@ MonoBehaviour:
   - {fileID: 833108882659689200, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
   - {fileID: 4316502659923598896, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
   - {fileID: 6294408697857516625, guid: d46918171df40084482235fb27d6faa2, type: 3}
+  popEnemyCount: 05000000050000000500000005000000
   lateTime: 1
 --- !u!1001 &833108881804492103
 PrefabInstance:
