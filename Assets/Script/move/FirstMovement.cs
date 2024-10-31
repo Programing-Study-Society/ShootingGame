@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstMovement : MonoBehaviour
 {
-    public float speed = 0.1f;
+    private float speed = 0.05f;
 
     [HideInInspector]
     public bool firstMove = true;
@@ -14,16 +14,19 @@ public class FirstMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firstPos = this.transform.position;
+        firstPos = this.transform.position + new Vector3(0.0f,GlovalValue.yLimit * 2,0.0f);
+        firstMove = true;
+        MoveRange = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MoveRange < GlovalValue.yLimit * 2)
+        if (MoveRange < GlovalValue.yLimit * 2 - speed)
         {
             this.transform.position -= new Vector3(0.0f, speed, 0.0f);
             MoveRange += speed;
+            //Debug.Log(this.transform.position);
         }
         else
         {
