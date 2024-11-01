@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class PursuitAttack: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("player");
         shootCount = 0;
     }
 

@@ -8,6 +8,7 @@ public class EnemyCollision : MonoBehaviour
     
     string ENEMY_TAG = "Enemy";
 
+    [HideInInspector]
     public GameObject CollisionObject;
 
     public bool IsEnemy()

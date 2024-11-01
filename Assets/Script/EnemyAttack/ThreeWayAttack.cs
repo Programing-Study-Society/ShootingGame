@@ -24,6 +24,7 @@ public class ThreeWayAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("player");
         shooting();
     }
 

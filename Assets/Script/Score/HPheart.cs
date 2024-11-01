@@ -5,42 +5,44 @@ using UnityEngine.UI;
 
 public class HPheart : MonoBehaviour
 {
-    public int maxHP = 10; // 最大HP
-    public int currentHP; // 現在のHP
     public GameObject heartPrefab; // ハートのプレハブ
     public Transform heartsContainer; // ハートを配置する親オブジェクト
+    private int OldHP;
 
-    private void Start()
+    void Start()
     {
-        currentHP = maxHP;
         UpdateHearts();
     }
 
-    public void IncreaseHP(int amount)
+    void Update()
     {
-        currentHP = Mathf.Min(currentHP + amount, maxHP);
-        UpdateHearts();
-    }
-
-    public void DecreaseHP(int amount)
-    {
-        currentHP = Mathf.Max(currentHP - amount, 0);
-        UpdateHearts();
+        if(GlovalValue.HP != OldHP)
+        {
+            UpdateHearts();
+            OldHP = GlovalValue.HP;
+        }
     }
 
     private void UpdateHearts()
     {
+        Debug.Log(heartsContainer);
         // 既存のハートを削除
         foreach (Transform child in heartsContainer)
         {
             Destroy(child.gameObject);
+            
         }
 
         // 現在のHPに応じてハートを生成
-        for (int i = 0; i < currentHP; i++)
+        for (int i = 0; i < GlovalValue.HP; i++)
         {
-            GameObject heart = Instantiate(heartPrefab, heartsContainer);
-            heart.GetComponent<RectTransform>().anchoredPosition = new Vector2(i * 40, 0); // ハートの位置を調整
+            Debug.Log(GlovalValue.HP);
+            GameObject heart = Instantiate(heartPrefab/*, heartsContainer*/);
+            heart.transform.SetParent(heartsContainer, false);
+            heart.transform.position = heartsContainer.position + new Vector3(i * 40, 0, 0);
+            //heart.GetComponent<RectTransform>().anchoredPosition = new Vector2(i * 40, 0); // ハートの位置を調整
         }
     }
+
+
 }
