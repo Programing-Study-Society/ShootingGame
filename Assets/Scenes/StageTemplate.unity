@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   - {fileID: 2620572931210816415, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
   - {fileID: 833108882659689200, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
   - {fileID: 4316502659923598896, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
-  popEnemyCount: 01000000010000000100000005000000
+  popEnemyCount: 040000000a0000000a0000000a000000
   lateTime: 1
 --- !u!1 &2045723043
 GameObject:
@@ -1605,6 +1605,18 @@ PrefabInstance:
     - target: {fileID: 5984803761222232961, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232964, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: speed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232964, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: SPEED.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232964, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: SPEED.y
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232964, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_camera
