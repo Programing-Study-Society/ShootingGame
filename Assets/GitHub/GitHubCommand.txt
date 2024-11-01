@@ -37,3 +37,5 @@ git pull origin branch名
 ※このコマンドを行う前に「GitHub ブランチ更新コマンド」を実施するようにしてください
 
 git checkout branch名
+
+これは次の作業に入る前に行うコマンド
