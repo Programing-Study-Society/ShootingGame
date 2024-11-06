@@ -25,7 +25,7 @@ public class MineExplosion : MonoBehaviour
         if (isPlayerEnter)
         {
             GlovalValue.HP -= power;
-            Debug.Log(GlovalValue.HP);
+            //Debug.Log(GlovalValue.HP);
             Destroy(gameObject);
             GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
@@ -37,7 +37,7 @@ public class MineExplosion : MonoBehaviour
         if (collision.tag == PLAYER_TAG)
         {
             isPlayerEnter = true;
-            Debug.Log("プレイヤーが判定に入りました");
+            //Debug.Log("プレイヤーが判定に入りました");
         }
 
     }

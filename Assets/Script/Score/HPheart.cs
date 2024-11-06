@@ -25,7 +25,7 @@ public class HPheart : MonoBehaviour
 
     private void UpdateHearts()
     {
-        Debug.Log(heartsContainer);
+        //Debug.Log(heartsContainer);
         // 既存のハートを削除
         foreach (Transform child in heartsContainer)
         {
@@ -36,7 +36,7 @@ public class HPheart : MonoBehaviour
         // 現在のHPに応じてハートを生成
         for (int i = 0; i < GlovalValue.HP; i++)
         {
-            Debug.Log(GlovalValue.HP);
+            //Debug.Log(GlovalValue.HP);
             GameObject heart = Instantiate(heartPrefab/*, heartsContainer*/);
             heart.transform.SetParent(heartsContainer, false);
             heart.transform.position = heartsContainer.position + new Vector3(i * 40, 0, 0);

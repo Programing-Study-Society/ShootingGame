@@ -75,8 +75,8 @@ public class StageTemplate : MonoBehaviour
                     }
                     else
                     {
-                        /*Debug.Log("stage:" + (stageCount + 1));
-                        popCount = 0;*/
+                        Debug.Log("stage:" + (stageCount + 1));
+                        popCount = 0;
                     }
 
                 }
