@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mineExplosion : MonoBehaviour
+public class MineExplosion : MonoBehaviour
 {
     bool isPlayerEnter = false;
     string PLAYER_TAG = "Player";
 
     [SerializeField, Header("地雷の威力")]
     private int power;
+
+    [SerializeField, Header("爆発エフェクト")]
+    public GameObject explotionEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class mineExplosion : MonoBehaviour
             GlovalValue.HP -= power;
             //Debug.Log(GlovalValue.HP);
             Destroy(gameObject);
+            GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
         }
     }
 
@@ -32,7 +37,7 @@ public class mineExplosion : MonoBehaviour
         if (collision.tag == PLAYER_TAG)
         {
             isPlayerEnter = true;
-            Debug.Log("プレイヤーが判定に入りました");
+            //Debug.Log("プレイヤーが判定に入りました");
         }
 
     }

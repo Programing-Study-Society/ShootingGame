@@ -10,4 +10,17 @@ public class EnemyStatas : MonoBehaviour
     public int ATK;
     [SerializeField, Header("エネミーの速度")]
     public float SPD;
+
+    [SerializeField, Header("爆発エフェクト")]
+    public GameObject explotionEffect;
+
+    void Update()
+    {
+        if (HP <= 0)
+        {
+            Destroy(this.gameObject);
+            GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        }
+    }
 }

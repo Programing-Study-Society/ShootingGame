@@ -14,4 +14,9 @@ public static class GlovalValue
     public static int HP = 5;
     public static int attack = 1;
 
+    //ƒvƒŒƒCƒ„[‚Ì“®‚¯‚é”ÍˆÍ
+    public static float xLimit;
+    public static float yLimit;
+
+
 }

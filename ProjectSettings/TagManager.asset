@@ -6,6 +6,10 @@ TagManager:
   tags:
   - player_item
   - Item
+  - enemyAttack
+  - Enemy
+  - PlayerAttack
+  - playerAttack
   layers:
   - Default
   - TransparentFX
@@ -42,4 +46,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Stage
+    uniqueID: 4277291529
+    locked: 0
+  - name: Ballet
+    uniqueID: 1954985699
+    locked: 0
+  - name: Enemy
+    uniqueID: 2359500621
+    locked: 0
+  - name: Player
+    uniqueID: 4110862375
     locked: 0
