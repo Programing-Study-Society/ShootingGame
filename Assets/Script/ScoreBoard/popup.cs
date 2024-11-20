@@ -6,20 +6,10 @@ using UnityEngine.UI;
 
 public class popup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject PanelUIObj;
+    //Panelを消す
+    public void InactivatePanel()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnClick()
-    {
-
+        PanelUIObj.SetActive(false);
     }
 }
