@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class back : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public void change_button()
     {
         SceneManager.LoadScene("GameScene1");
     }

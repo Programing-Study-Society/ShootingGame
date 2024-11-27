@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gameover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+public GameObject PanelUIObj;
+    //Panelを表示する
+    public void InactivatePanel()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-            
+        PanelUIObj.SetActive(true);
     }
 }
