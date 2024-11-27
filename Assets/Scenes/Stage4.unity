@@ -2326,11 +2326,10 @@ MonoBehaviour:
   enemyCollision: {fileID: 661221019}
   mainCamera: {fileID: 1901999991}
   popEnemy:
-  - {fileID: 6294408697857516625, guid: d46918171df40084482235fb27d6faa2, type: 3}
-  - {fileID: 4316502659923598896, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
-  - {fileID: 833108882659689200, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
-  - {fileID: 2620572931210816415, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
-  popEnemyCount: 050000000a0000000a0000000a000000
+  - {fileID: 4316502659923598896, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
+  - {fileID: 4316502659923598896, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
+  - {fileID: 0}
+  popEnemyCount: 050000000500000000000000
   lateTime: 1
 --- !u!1 &2003768481
 GameObject:
