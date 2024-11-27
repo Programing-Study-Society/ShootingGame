@@ -3,9 +3,9 @@ using System.Collections;
 
 public class moveController: MonoBehaviour
 {
-    public float speed;
+    [HideInInspector]public float speed = GlovalValue.speed / 100;
     // 速度
-    public Vector2 SPEED = new Vector2(0.05f, 0.05f);
+    [HideInInspector]public Vector2 SPEED = new Vector2(GlovalValue.speed / 100, GlovalValue.speed / 100);
     // Use this for initialization
     void Start()
     {
@@ -27,22 +27,22 @@ public class moveController: MonoBehaviour
         float moveY = 0f;
         Vector2 Position = transform.position;
         // 左キーを押し続けていたら
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey (KeyCode.A))
         {
             // 代入したPositionに対して加算減算を行う
             moveX -= SPEED.x;
         }
-        else if (Input.GetKey("right"))
+        else if (Input.GetKey("right") || Input.GetKey (KeyCode.D))
         { // 右キーを押し続けていたら
           // 代入したPositionに対して加算減算を行う
             moveX += SPEED.x;
         }
-        if (Input.GetKey("up"))
+        if (Input.GetKey("up") || Input.GetKey (KeyCode.W))
         { // 上キーを押し続けていたら
           // 代入したPositionに対して加算減算を行う
             moveY += SPEED.y;
         }
-        else if (Input.GetKey("down"))
+        else if (Input.GetKey("down") || Input.GetKey (KeyCode.S)) 
         { // 下キーを押し続けていたら
           // 代入したPositionに対して加算減算を行う
             moveY -= SPEED.y;

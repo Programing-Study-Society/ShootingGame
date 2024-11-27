@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerControlArea : MonoBehaviour
 {
-    //player‚ªˆÚ“®‚Å‚«‚éX‚ÆY‚ÌãŒÀ
+    //playerï¿½ï¿½ï¿½Ú“ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Xï¿½ï¿½Yï¿½Ìï¿½ï¿½
     public GameObject mainCamera;
     
     // Start is called before the first frame update
     void Start()
     {
-        //ƒJƒƒ‰‚Ì‹——£‚É‘Î‰‚µ‚Ä“®‚¯‚é”ÍˆÍ‚ğ•ÏX
-        GlovalValue.xLimit = -0.4f + -mainCamera.transform.position.z + (-mainCamera.transform.position.z * 0.01f);
-        GlovalValue.yLimit = 0.4f + (-mainCamera.transform.position.z * 0.53f);
+        //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì‹ï¿½ï¿½ï¿½ï¿½É‘Î‰ï¿½ï¿½ï¿½ï¿½Ä“ï¿½ï¿½ï¿½ï¿½ï¿½ÍˆÍ‚ï¿½ÏX
+        GlovalValue.xLimit = (-mainCamera.transform.position.z * 1.12f);
+        GlovalValue.yLimit = (-mainCamera.transform.position.z * 0.55f);
         //Debug.Log(xLimit);
         //Debug.Log(yLimit);
     }
@@ -20,17 +20,17 @@ public class PlayerControlArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ƒJƒƒ‰‚ÌŒ»İ‚ÌˆÊ’u‚ğæ“¾
+        //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ÌŒï¿½ï¿½İ‚ÌˆÊ’uï¿½ï¿½ï¿½æ“¾
         Vector3 cameraPos = mainCamera.transform.position;
-        //Œ»İ‚ÌƒvƒŒƒCƒ„[‚ÌˆÊ’u‚ğæ“¾
+        //ï¿½ï¿½ï¿½İ‚Ìƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌˆÊ’uï¿½ï¿½ï¿½æ“¾
         Vector3 currentPos = transform.position;
 
-        //Mathf.Clamp‚ÅX,Y‚Ì’l‚»‚ê‚¼‚ê‚ªÅ¬`Å‘å‚Ì”ÍˆÍ“à‚Éû‚ß‚éB
-        //”ÍˆÍ‚ğ’´‚¦‚Ä‚¢‚½‚ç”ÍˆÍ“à‚Ì’l‚ğ‘ã“ü‚·‚é
+        //Mathf.Clampï¿½ï¿½X,Yï¿½Ì’lï¿½ï¿½ï¿½ê‚¼ï¿½ê‚ªï¿½Åï¿½ï¿½`ï¿½Å‘ï¿½Ì”ÍˆÍ“ï¿½ï¿½Éï¿½ï¿½ß‚ï¿½B
+        //ï¿½ÍˆÍ‚ğ’´‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ÍˆÍ“ï¿½ï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         currentPos.x = Mathf.Clamp(currentPos.x, -GlovalValue.xLimit + cameraPos.x, GlovalValue.xLimit + cameraPos.x);
         currentPos.y = Mathf.Clamp(currentPos.y, -GlovalValue.yLimit + cameraPos.y, GlovalValue.yLimit + cameraPos.y);
 
-        //’Ç‰Á@position‚ğcurrentPos‚É‚·‚é
+        //ï¿½Ç‰ï¿½ï¿½@positionï¿½ï¿½currentPosï¿½É‚ï¿½ï¿½ï¿½
         transform.position = currentPos;
     }
 }

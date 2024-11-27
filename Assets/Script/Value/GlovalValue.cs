@@ -13,10 +13,15 @@ public static class GlovalValue
     //プレイヤーステータス
     public static int HP = 5;
     public static int attack = 1;
+    public static int speed = 10;
 
     //プレイヤーの動ける範囲
     public static float xLimit;
     public static float yLimit;
+
+    //武器やアビリティーの管理
+    public static int qAvilityNumber = 2;//1,レーザー : 2,ミサイル
+    public static int rightClickAvilityNumber = 2;//1,バリア : 2,玉消滅爆弾
 
 
 }

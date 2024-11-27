@@ -14,10 +14,14 @@ public class EnemyStatas : MonoBehaviour
     [SerializeField, Header("爆発エフェクト")]
     public GameObject explotionEffect;
 
+    [SerializeField, Header("エネミースコア")]
+    public int score;
+
     void Update()
     {
         if (HP <= 0)
         {
+            GlovalValue.score = score;
             Destroy(this.gameObject);
             GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
