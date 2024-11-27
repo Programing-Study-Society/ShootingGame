@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 1106620082}
   perdrop: 99
-  EnemyHP: 2
+  enemyStatas: {fileID: 1117919800}
 --- !u!114 &1117919797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,9 +660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85cebc6e37d5a745b3c973d0bd37f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 1
+  HP: 0
   ATK: 1
-  SPD: 1
+  SPD: 0.3
   explotionEffect: {fileID: 0}
 --- !u!1 &1687732962
 GameObject:

@@ -4,19 +4,25 @@ using UnityEngine;
 
 public static class GlovalValue
 {
-    //“ïˆÕ“x•Ï”@1:easy,2:normal,3:hard,4:master
+    //ï¿½ï¿½Õ“xï¿½Ïï¿½ï¿½@1:easy,2:normal,3:hard,4:master
     public static int Difficulty = 1;
     
-    //ƒXƒRƒA•Ï”
+    //ï¿½Xï¿½Rï¿½Aï¿½Ïï¿½
     public static int score = 0;
 
-    //ƒvƒŒƒCƒ„[ƒXƒe[ƒ^ƒX
+    //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Xï¿½eï¿½[ï¿½^ï¿½X
     public static int HP = 5;
     public static int attack = 1;
 
-    //ƒvƒŒƒCƒ„[‚Ì“®‚¯‚é”ÍˆÍ
+    //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì“ï¿½ï¿½ï¿½ï¿½ï¿½Íˆï¿½
     public static float xLimit;
     public static float yLimit;
 
-
+    public static int[,] ScoreList = new int[4,5]{
+        {0,1,2,3,4},
+        {5,6,7,8,9},
+        {10,11,12,13,14},
+        {15,16,17,18,19}
+    };
+    
 }
