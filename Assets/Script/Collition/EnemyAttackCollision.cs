@@ -2,16 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollision : MonoBehaviour
+public class EnemyAttackCollision : MonoBehaviour
 {
     bool isEnemyEnter, isEnemyStay, isEnemyExit;
     
-    string ENEMY_TAG = "Enemy";
+    string ENEMY_TAG = "enemyAttack";
 
     [HideInInspector]
     public GameObject CollisionObject;
 
     public List<GameObject> colList = new List<GameObject> ();
+
+    void Update()
+    {
+        Attack();
+    }
+
+    private void Attack(){
+        if(IsEnemy()){
+            for(int i = 0; i < colList.Count ; i++){
+                if (colList[i] != null){
+                    Destroy(colList[i]);
+                }
+            } 
+        }    
+    } 
 
     public bool IsEnemy()
     {
@@ -30,7 +45,6 @@ public class EnemyCollision : MonoBehaviour
         isEnemyExit = false;
         return isEnemy;
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
