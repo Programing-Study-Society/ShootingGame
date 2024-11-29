@@ -12,6 +12,7 @@ public static class GlovalValue
 
     //?v???C???[?X?e?[?^?X
     public static int HP = 5;
+    public static int MaxHP = 5;
     public static int attack = 1;
     public static int speed = 10;
 

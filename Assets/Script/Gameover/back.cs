@@ -6,15 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class back : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void change_button()
-    {
-        SceneManager.LoadScene("GameScene1");
-    }
+    void Start (){ 
+        //ボタンが押された時、StartGame関数を実行　
+        gameObject.GetComponent<Button>().onClick.AddListener(StartGame); } 
+        // StartGame関数　
+        void StartGame() { 
+            SceneManager.LoadScene("Home_Scene"); 
+        gameObject.GetComponent<Button>().onClick.AddListener(StartGame); 
+    } 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
