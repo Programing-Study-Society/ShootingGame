@@ -11,9 +11,9 @@ public static class GlovalValue
     public static int score = 0;
 
     //?v???C???[?X?e?[?^?X
-    public static int HP = 5;
+    public static int HP = 10;
     public static int attack = 1;
-    public static int speed = 10;
+    public static float speed = 20.0f;
 
     //?v???C???[?????????
     public static float xLimit;

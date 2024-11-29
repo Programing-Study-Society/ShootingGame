@@ -11,8 +11,8 @@ public class PlayerControlArea : MonoBehaviour
     void Start()
     {
         //�J�����̋����ɑΉ����ē�����͈͂�ύX
-        GlovalValue.xLimit = (-mainCamera.transform.position.z * 1.12f);
-        GlovalValue.yLimit = (-mainCamera.transform.position.z * 0.55f);
+        GlovalValue.xLimit = (-mainCamera.transform.position.z * 1.00f);
+        GlovalValue.yLimit = (-mainCamera.transform.position.z * 0.56f);
         //Debug.Log(xLimit);
         //Debug.Log(yLimit);
     }
