@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class score : MonoBehaviour
+public class Continue : MonoBehaviour
 {
-    public GameObject score_object;
-    Text score_text;
-
+    public void change_button()
+    {
+        SceneManager.LoadScene("GameScene1");
+    }
     // Start is called before the first frame update
     void Start()
     {
-        //GetCompornentはstartへ
-        score_text = score_object.GetComponent<Text> ();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        score_text.text = GlovalValue.score.ToString();
+
     }
 }

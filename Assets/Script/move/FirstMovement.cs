@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirstMovement : MonoBehaviour
 {
-    private float speed = 0.05f;
+    private float speed = 0.5f;
 
     [HideInInspector]
     public bool firstMove = true;
