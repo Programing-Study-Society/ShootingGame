@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - PlayerAttack
   - playerAttack
+  - Target
+  - Radar
   layers:
   - Default
   - TransparentFX
@@ -58,4 +60,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4110862375
+    locked: 0
+  - name: Target
+    uniqueID: 2972934743
     locked: 0

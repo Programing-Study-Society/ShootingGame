@@ -18,6 +18,6 @@ public class score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score_text.text = "000000";
+        score_text.text = GlovalValue.score.ToString();
     }
 }
