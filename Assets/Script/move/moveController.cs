@@ -9,7 +9,8 @@ public class moveController: MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        SPEED = new Vector2(GlovalValue.speed / 100, GlovalValue.speed / 100);
+        speed = GlovalValue.speed / 100;
     }
 
     // Update is called once per frame

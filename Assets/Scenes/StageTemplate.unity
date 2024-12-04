@@ -764,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -960, y: 540}
+  m_AnchoredPosition: {x: -959.99994, y: 540}
   m_SizeDelta: {x: -1920.0001, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &844233979
@@ -828,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -800, y: 490}
+  m_AnchoredPosition: {x: -740.71, y: 490}
   m_SizeDelta: {x: 418.575, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860339355
@@ -2168,7 +2168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901999991}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61d0869477b4d8f41a906d4a9c09a926, type: 3}
   m_Name: 
@@ -2269,7 +2269,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000851624}
-  - component: {fileID: 2000851623}
   - component: {fileID: 2000851625}
   m_Layer: 0
   m_Name: stageGimmick
@@ -2278,24 +2277,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2000851623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000851622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb67717bcb9391c4fae0a60914940893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1901999991}
-  popEnemy:
-  - {fileID: 2620572931210816415, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
-  - {fileID: 833108882659689200, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
-  - {fileID: 4316502659923598896, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
-  lateTime: 1
 --- !u!4 &2000851624
 Transform:
   m_ObjectHideFlags: 0
@@ -2323,7 +2304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1356c98ba9f6b0843b23945b9e2f219d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCollision: {fileID: 661221019}
+  enemyCollision: {fileID: 0}
   mainCamera: {fileID: 1901999991}
   popEnemy:
   - {fileID: 6294408697857516625, guid: d46918171df40084482235fb27d6faa2, type: 3}
@@ -2848,12 +2829,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 937991920790414310, guid: f0ccc4edca33bf14baa565c63b089504, type: 3}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 67ccf31687dd65b469f7d5fb43faf15c, type: 3}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_SortingLayer
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_SortingLayerID
       value: -184104921
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232967, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_RootOrder
