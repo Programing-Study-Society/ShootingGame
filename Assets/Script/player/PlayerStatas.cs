@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PlayerStatas : MonoBehaviour
 {
-    [SerializeField, Header("ƒvƒŒƒCƒ„[‚ÌHP")]
+    [SerializeField, Header("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½HP")]
     public int HP;
-    [SerializeField, Header("ƒvƒŒƒCƒ„[‚ÌUŒ‚—Í")]
+    [SerializeField, Header("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌUï¿½ï¿½ï¿½ï¿½")]
     public int ATK;
-    [SerializeField, Header("ƒvƒŒƒCƒ„[‚Ì‘¬“x")]
+    [SerializeField, Header("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì‘ï¿½ï¿½x")]
     public float SPD;
 
     // Start is called before the first frame update
     void Start()
     {
-        GlovalValue.HP = HP;
-        GlovalValue.attack = ATK;
+        HP = GlovalValue.HP;
+        ATK = GlovalValue.attack;
+        SPD = GlovalValue.speed;
     }
 }

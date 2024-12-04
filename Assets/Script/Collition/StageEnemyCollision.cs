@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollision : MonoBehaviour
+public class StageEnemyCollision : MonoBehaviour
 {
     bool isEnemyEnter, isEnemyStay, isEnemyExit;
     
     string ENEMY_TAG = "Enemy";
-    string DESTROYOBJECT_TAG = "CanDestroyObj";
 
     [HideInInspector]
     public GameObject CollisionObject;
@@ -45,7 +44,7 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == ENEMY_TAG || collision.tag == DESTROYOBJECT_TAG)
+        if (collision.tag == ENEMY_TAG)
         {
             colList.Add (collision.gameObject);
             //Debug.Log("enemy = " + colList.Count);
@@ -58,7 +57,7 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == ENEMY_TAG || collision.tag == DESTROYOBJECT_TAG)
+        if (collision.tag == ENEMY_TAG)
         {
             isEnemyStay = true;
             //Debug.Log("プレイヤーが判定に入り続けています"); 
@@ -68,7 +67,7 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == ENEMY_TAG || collision.tag == DESTROYOBJECT_TAG)
+        if (collision.tag == ENEMY_TAG)
         {
             isEnemyExit = true;
             isEnemyStay = false;

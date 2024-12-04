@@ -7,10 +7,10 @@ public class MineExplosion : MonoBehaviour
     bool isPlayerEnter = false;
     string PLAYER_TAG = "Player";
 
-    [SerializeField, Header("’n—‹‚ÌˆĞ—Í")]
+    [SerializeField, Header("ï¿½nï¿½ï¿½ï¿½ÌˆĞ—ï¿½")]
     private int power;
 
-    [SerializeField, Header("”š”­ƒGƒtƒFƒNƒg")]
+    [SerializeField, Header("ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½tï¿½Fï¿½Nï¿½g")]
     public GameObject explotionEffect;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class MineExplosion : MonoBehaviour
         if (collision.tag == PLAYER_TAG)
         {
             isPlayerEnter = true;
-            //Debug.Log("ƒvƒŒƒCƒ„[‚ª”»’è‚É“ü‚è‚Ü‚µ‚½");
+            //Debug.Log("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½");
         }
 
     }

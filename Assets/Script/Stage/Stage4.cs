@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageTemplate : MonoBehaviour
+public class Stage4 : MonoBehaviour
 {
     [SerializeField, Header("画面範囲内にエネミーがいるか判定")]
     public StageEnemyCollision enemyCollision;
@@ -15,6 +15,9 @@ public class StageTemplate : MonoBehaviour
 
     [SerializeField, Header("ポップしたいエネミーのポップ数を入れる")]
     public List<int> popEnemyCount;
+
+    [SerializeField, Header("ポップしたいエネミーのポップ数を入れる")]
+    public List<Vector3> popEnemyPos;
 
     [SerializeField, Header("ポップし終わった後の待ち時間")]
     public float lateTime = 1.0f;
@@ -45,30 +48,44 @@ public class StageTemplate : MonoBehaviour
             return;
         }
 
-        //popCount???|?b?v????????s???? else ??
+        //stageCountがポップするエネミー数以上なら実行しない
         //Debug.Log(stageCount);
         if(stageCount >= popEnemy.Count)
         {
             return;
         }
+
+        //popCountがpopEnemyCount以下なら実行
         if (popCount < popEnemyCount[stageCount])
         {
-            Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
-                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+            if(stageCount == 0){
+                Wave1();
+            }
+            else if(stageCount == 1){
+                Wave2();
+            }
+            else if(stageCount == 2 || stageCount == 3){
+                Wave3();
+            }
+            else if(stageCount == 4){
+                Wave4();
+            }
+            
             popCount++;
         }
         else
         {
-            //?G?l?~?[????????????????s
-            if (!enemyCollision.IsEnemy())
+            //エネミーが画面上にいなくなったら実行
+            if (!enemyCollision.NonGameObject())
             {
-                //popEnemy????X?g??????????????s?????
+                //Debug.Log(enemyCollision.NonGameObject());
+                //popEnemyがstageCount以上なら実行
                 if (popEnemy.Count >= stageCount)
                 {
 
-                    //????G?l?~?[???|?b?v???????????
+                    //stageCountを1増やす
                     stageCount += 1;
-                    //?|?b?v??????????????I??
+                    //stageCountがエネミー数より多ければクリアそうでなければ次のステージ番号表示
                     if (stageCount >= popEnemy.Count)
                     {
                         Debug.Log("CLEAR");
@@ -85,14 +102,36 @@ public class StageTemplate : MonoBehaviour
         time = 0;
     }
 
-    //?|?b?v???????I?u?W?F?N?g???????u??l??????????|?b?v?????
+    public void Wave1(){
+        Vector3 pos = popEnemyPos[stageCount];
+        pos.y += (popCount) * 3.0f;
+        Pop(popEnemy[stageCount],pos);
+        pos.x = -pos.x;
+        Pop(popEnemy[stageCount],pos);
+    }
+
+    public void Wave2(){
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+    }
+
+    public void Wave3(){
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+    }
+
+    public void Wave4(){
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+    }
+
+    //エネミーポップ関数
     public void Pop(GameObject enemyObject,Vector3 initialPosition)
     {
-        //?G?l?~?[?I?u?W?F?N?g????
+        //エネミー召喚
         GameObject enemyObj1 = Instantiate(enemyObject);
         initialPosition.y += GlovalValue.yLimit * 2;
-        //?G?l?~?[?I?u?W?F?N?g????W???
+        
+        //ポジション指定
         enemyObj1.transform.position = initialPosition;
-
     }
 }
