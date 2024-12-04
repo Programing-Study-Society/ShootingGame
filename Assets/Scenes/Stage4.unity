@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 661221021}
   - component: {fileID: 661221023}
   - component: {fileID: 661221022}
-  - component: {fileID: 661221019}
+  - component: {fileID: 661221024}
   m_Layer: 0
   m_Name: StageEnemyCollision
   m_TagString: Untagged
@@ -618,20 +618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &661221019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661221018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e4f9bcc7cd18564ba0e2b8c6ea3aa19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionObject: {fileID: 0}
-  colList: []
 --- !u!4 &661221021
 Transform:
   m_ObjectHideFlags: 0
@@ -694,6 +680,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &661221024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661221018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06aab546d932e54c9e792e6bee31208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionObject: {fileID: 0}
+  colList: []
 --- !u!1 &698379744
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -959.99994, y: 540}
+  m_AnchoredPosition: {x: -960, y: 540}
   m_SizeDelta: {x: -1920.0001, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &844233979
@@ -1804,6 +1804,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5984803761222232967, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
   m_PrefabInstance: {fileID: 5984803760571632010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767498284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767498251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6598e8baf82e5ca44987128da3f5478c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  ATK: 0
+  SPD: 0
 --- !u!1 &1830087065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,17 +2304,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7d07632cdcf7c4fb550b093d565b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCollision: {fileID: 661221019}
+  enemyCollision: {fileID: 661221024}
   mainCamera: {fileID: 1901999991}
   popEnemy:
   - {fileID: 4316502659923598896, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
   - {fileID: 2620572931210816415, guid: d7afddd975e40384087d23dc32f45151, type: 3}
   - {fileID: 4316502659923598896, guid: e40482334ca01094fb461b78f8f4b605, type: 3}
   - {fileID: 2620572931210816415, guid: d7afddd975e40384087d23dc32f45151, type: 3}
-  popEnemyCount: 06000000040000000200000002000000
+  - {fileID: 2620572931210816415, guid: 1e8f1d54d54a3ce4c8239dd015344f4e, type: 3}
+  popEnemyCount: 06000000040000000200000001000000
   popEnemyPos:
   - {x: -18, y: -7, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 3, z: 0}
   lateTime: 0.5
 --- !u!1 &2003768481
 GameObject:

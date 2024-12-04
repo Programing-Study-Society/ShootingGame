@@ -63,8 +63,12 @@ public class Stage4 : MonoBehaviour
             }
             else if(stageCount == 1){
                 Wave2();
-            }else if(stageCount == 2 || stageCount == 3){
+            }
+            else if(stageCount == 2 || stageCount == 3){
                 Wave3();
+            }
+            else if(stageCount == 4){
+                Wave4();
             }
             
             popCount++;
@@ -114,6 +118,10 @@ public class Stage4 : MonoBehaviour
     public void Wave3(){
         Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
                                  Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+    }
+
+    public void Wave4(){
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
     }
 
     //エネミーポップ関数
