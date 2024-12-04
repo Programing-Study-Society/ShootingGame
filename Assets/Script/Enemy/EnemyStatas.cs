@@ -21,7 +21,8 @@ public class EnemyStatas : MonoBehaviour
     {
         if (HP <= 0)
         {
-            GlovalValue.score = score;
+            GlovalValue.score += score;
+            //Debug.Log(GlovalValue.score);
             Destroy(this.gameObject);
             GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);

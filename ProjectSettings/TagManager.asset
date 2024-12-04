@@ -9,9 +9,9 @@ TagManager:
   - enemyAttack
   - Enemy
   - PlayerAttack
-  - playerAttack
   - Target
   - Radar
+  - CanDestroyObj
   layers:
   - Default
   - TransparentFX
