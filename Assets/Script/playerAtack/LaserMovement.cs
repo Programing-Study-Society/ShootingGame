@@ -17,6 +17,9 @@ public class LaserMovement : MonoBehaviour
 
     private float actualTime = 2.0f;
 
+    private float lateTime = 0.45f;
+    private float time = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,15 @@ public class LaserMovement : MonoBehaviour
     void Update()
     {
         Move();
+        time += Time.deltaTime;
+
+        //lateTime以下なら実行しない
+        if (time < lateTime)
+        {
+            return;
+        }
         Attack();
+        time = 0.0f;
     }
 
     private void Move()

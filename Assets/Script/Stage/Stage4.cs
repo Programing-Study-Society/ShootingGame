@@ -30,10 +30,12 @@ public class Stage4 : MonoBehaviour
     
     //ポップした数
     private int popCount = 0;
+    
+    private int waveCount = 1;
 
     void Start()
     {
-        Debug.Log("stage:" + (stageCount + 1));
+        Debug.Log("stage:" + waveCount);
     }
 
     // Update is called once per frame
@@ -75,6 +77,11 @@ public class Stage4 : MonoBehaviour
         }
         else
         {
+            //次のエネミーを連続で出現させたい時実行
+            if(stageCount == 2){
+                stageCount += 1;
+                popCount = 0;
+            }
             //エネミーが画面上にいなくなったら実行
             if (!enemyCollision.NonGameObject())
             {
@@ -92,7 +99,8 @@ public class Stage4 : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("stage:" + (stageCount + 1));
+                        waveCount += 1;
+                        Debug.Log("stage:" + waveCount);
                         popCount = 0;
                     }
 
