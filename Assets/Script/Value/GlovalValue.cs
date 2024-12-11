@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GlovalValue
 {
     //???x????@1:easy,2:normal,3:hard,4:master
-    public static int Difficulty = 1;
+    public static int Difficulty = 0;
     
     //?X?R?A???
     public static int score = 0;
@@ -30,5 +30,7 @@ public static class GlovalValue
         {10,11,12,13,14},
         {15,16,17,18,19}
     };
+
+    public static bool pauseFlag = false;
     
 }
