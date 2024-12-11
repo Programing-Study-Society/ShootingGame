@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class pause : MonoBehaviour
 {
+    public GameObject pauseText;
+
     private bool isPaused = false;
 
     void Start()
@@ -18,11 +20,15 @@ public class pause : MonoBehaviour
         {
             if(isPaused)
             {
+                GlovalValue.pauseFlag = false;
                 ResumeGame();
+                pauseText.SetActive(false);
             }
             else
             {
+                GlovalValue.pauseFlag = true;
                 PauseGame();
+                pauseText.SetActive(true);
             }
         }
     }
