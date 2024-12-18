@@ -293,7 +293,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a25d4e2042ebc946963d4362309b9ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9fbc1a7806890444fa74f3a4d16ce295, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 661221021}
   - component: {fileID: 661221023}
   - component: {fileID: 661221022}
-  - component: {fileID: 661221019}
+  - component: {fileID: 661221024}
   m_Layer: 0
   m_Name: StageEnemyCollision
   m_TagString: Untagged
@@ -618,20 +618,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &661221019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661221018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e4f9bcc7cd18564ba0e2b8c6ea3aa19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionObject: {fileID: 0}
-  colList: []
 --- !u!4 &661221021
 Transform:
   m_ObjectHideFlags: 0
@@ -639,13 +625,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661221018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 280, y: 170, z: 1}
+  m_LocalScale: {x: 279.99997, y: 170, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &661221022
 BoxCollider2D:
@@ -694,6 +680,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &661221024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661221018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06aab546d932e54c9e792e6bee31208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionObject: {fileID: 0}
+  colList: []
 --- !u!1 &698379744
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +727,7 @@ Transform:
   - {fileID: 65098321}
   - {fileID: 2045723044}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &702490743
 GameObject:
@@ -2496,7 +2496,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000851624}
-  - component: {fileID: 2000851623}
   - component: {fileID: 2000851625}
   m_Layer: 0
   m_Name: stageGimmick
@@ -2505,24 +2504,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2000851623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000851622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb67717bcb9391c4fae0a60914940893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1901999991}
-  popEnemy:
-  - {fileID: 2620572931210816415, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
-  - {fileID: 833108882659689200, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
-  - {fileID: 4316502659923598896, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
-  lateTime: 1
 --- !u!4 &2000851624
 Transform:
   m_ObjectHideFlags: 0
@@ -2547,17 +2528,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000851622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1356c98ba9f6b0843b23945b9e2f219d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ba22893ec1e1834a98e0ebd41840e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCollision: {fileID: 0}
-  mainCamera: {fileID: 1901999991}
+  mainCamera: {fileID: 0}
   popEnemy:
-  - {fileID: 6294408697857516625, guid: d46918171df40084482235fb27d6faa2, type: 3}
-  - {fileID: 4316502659923598896, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
-  - {fileID: 833108882659689200, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
-  - {fileID: 2620572931210816415, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
-  popEnemyCount: 050000000a0000000a0000000a000000
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  popEnemyCount: 0000000000000000000000000000000000000000
+  popEnemyPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  popEnemyWave: 00000000
   lateTime: 1
 --- !u!1 &2003768481
 GameObject:
