@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cd195f36da43d45a990c03d118ab64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCollision: {fileID: 0}
+  enemyCollision: {fileID: 1361274156}
   mainCamera: {fileID: 78719787}
   popEnemy:
   - {fileID: 0}
@@ -850,9 +850,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  lateTime: 1
+  lateTime: 3
 --- !u!1001 &774758880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -919,7 +917,7 @@ PrefabInstance:
     - target: {fileID: 8912585753365517134, guid: b889d20f88342d74f9870b6abf379014, type: 3}
       propertyPath: enemyCollision
       value: 
-      objectReference: {fileID: 1361274152}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b889d20f88342d74f9870b6abf379014, type: 3}
 --- !u!1 &805945934
@@ -1958,7 +1956,7 @@ GameObject:
   - component: {fileID: 1361274155}
   - component: {fileID: 1361274154}
   - component: {fileID: 1361274153}
-  - component: {fileID: 1361274152}
+  - component: {fileID: 1361274156}
   m_Layer: 0
   m_Name: StageEnemyCollision
   m_TagString: Untagged
@@ -1966,20 +1964,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1361274152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361274151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e4f9bcc7cd18564ba0e2b8c6ea3aa19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionObject: {fileID: 0}
-  colList: []
 --- !u!61 &1361274153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2042,6 +2026,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1361274156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361274151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06aab546d932e54c9e792e6bee31208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionObject: {fileID: 0}
+  colList: []
 --- !u!1 &1373793429 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6688625775410832276, guid: 74109601d71beeb43b8cee89dd0b63cf, type: 3}
@@ -2320,7 +2318,7 @@ PrefabInstance:
     - target: {fileID: 2619278012357041665, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: radarEnemyCollision
       value: 
-      objectReference: {fileID: 1361274152}
+      objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232961, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_Name
       value: player
@@ -2420,7 +2418,7 @@ PrefabInstance:
     - target: {fileID: 6519196625895254652, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: atkObj1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1996575114}
     - target: {fileID: 6519196625895254652, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: timeText
       value: 
@@ -2765,6 +2763,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781773708}
   m_CullTransparentMesh: 1
+--- !u!1 &1996575114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 937991920790414310, guid: d2a6d5615518d0c4ea31c6c37965aee9, type: 3}
+  m_PrefabInstance: {fileID: 1545266218}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1996575121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5481059931339610501, guid: d2a6d5615518d0c4ea31c6c37965aee9, type: 3}
