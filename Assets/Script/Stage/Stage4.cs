@@ -10,14 +10,20 @@ public class Stage4 : MonoBehaviour
     [SerializeField, Header("main Camera")]
     public GameObject mainCamera;
 
+    [SerializeField, Header("障害物（爆弾）")]
+    public GameObject bombObject;
+
     [SerializeField, Header("ポップしたいエネミーを順番に入れる")]
     public List<GameObject> popEnemy;
 
     [SerializeField, Header("ポップしたいエネミーのポップ数を入れる")]
     public List<int> popEnemyCount;
 
-    [SerializeField, Header("ポップしたいエネミーのポップ数を入れる")]
+    [SerializeField, Header("ポップしたいエネミーのポジションを入れる")]
     public List<Vector3> popEnemyPos;
+
+    [SerializeField, Header("ポップしたいエネミーを何ウェーブ目に出現させるか入力する")]
+    public List<int> popEnemyWave;
 
     [SerializeField, Header("ポップし終わった後の待ち時間")]
     public float lateTime = 1.0f;
@@ -27,6 +33,7 @@ public class Stage4 : MonoBehaviour
 
     //待った時間
     private float time = 0.0f;
+    private float bombTime = 0.0f;
     
     //ポップした数
     private int popCount = 0;
@@ -43,6 +50,7 @@ public class Stage4 : MonoBehaviour
     {
         //
         time += Time.deltaTime;
+        BombPop();
 
         //lateTime以下なら実行しない
         if (time < lateTime)
@@ -78,10 +86,13 @@ public class Stage4 : MonoBehaviour
         else
         {
             //次のエネミーを連続で出現させたい時実行
-            if(stageCount == 2){
-                stageCount += 1;
-                popCount = 0;
+            if(stageCount < popEnemyWave.Count - 1){
+                if(popEnemyWave[stageCount] == popEnemyWave[stageCount + 1]){
+                    stageCount += 1;
+                    popCount = 0;
+                }
             }
+            
             //エネミーが画面上にいなくなったら実行
             if (!enemyCollision.NonGameObject())
             {
@@ -108,6 +119,19 @@ public class Stage4 : MonoBehaviour
             }
         }
         time = 0;
+    }
+
+    public void BombPop(){
+        bombTime += Time.deltaTime;
+        if(bombTime <= 1.0){
+            return;
+        }
+        int randam = Random.Range(1,5);
+        for(int i = 0;i < randam;i++){
+            Pop(bombObject, new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+        }
+        bombTime = 0.0f;
     }
 
     public void Wave1(){

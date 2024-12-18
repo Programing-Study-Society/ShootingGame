@@ -8,7 +8,7 @@ public class LaserMovement : MonoBehaviour
     private float speed;
 
     [SerializeField, Header("ダメージ")]
-    private int power;
+    private float power;
 
     public EnemyCollision enemyCollision;
 
@@ -61,7 +61,7 @@ public class LaserMovement : MonoBehaviour
             for(int i = 0; i < enemyCollision.colList.Count ; i++){
                 if (enemyCollision.colList[i] != null){
                     EnemyStatas enemyStatas = enemyCollision.colList[i].GetComponent<EnemyStatas>();
-                    enemyStatas.HP -= power * GlovalValue.attack;
+                    enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
                 
                 }
             } 
