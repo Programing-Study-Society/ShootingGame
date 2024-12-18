@@ -22,6 +22,10 @@ public class RightClickAvility : MonoBehaviour
     }
 
     void Update(){
+        if(GlovalValue.pauseFlag){
+            return;
+        }
+
         if(avirityNumber == 1){
             BarrierAvility();
         }else if(avirityNumber == 2){

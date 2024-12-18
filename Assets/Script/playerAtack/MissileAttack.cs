@@ -6,7 +6,7 @@ public class MissileAttack : MonoBehaviour
 {
     [SerializeField, Header("速さ")]private float speed;
 
-    [SerializeField, Header("ダメージ")]private int power;
+    [SerializeField, Header("ダメージ")]private float power;
     
     [SerializeField, Header("爆発エフェクト")]public GameObject explotionEffect;
 
@@ -52,7 +52,7 @@ public class MissileAttack : MonoBehaviour
         if(enemyCollision.IsEnemy()){
             if (enemyCollision.CollisionObject != null){
                 EnemyStatas enemyStatas = enemyCollision.CollisionObject.GetComponent<EnemyStatas>();
-                enemyStatas.HP -= power * GlovalValue.attack;
+                enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
                 Destroy(this.gameObject);
                 GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
                 Destroy(effect, 0.5f);

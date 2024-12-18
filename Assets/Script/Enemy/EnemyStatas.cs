@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStatas : MonoBehaviour
 {
     [SerializeField, Header("エネミーのHP")]
-    public int HP;
+    public float HP;
     [SerializeField, Header("エネミーの攻撃力")]
     public int ATK;
     [SerializeField, Header("エネミーの速度")]
@@ -15,7 +15,13 @@ public class EnemyStatas : MonoBehaviour
     public GameObject explotionEffect;
 
     [SerializeField, Header("エネミースコア")]
-    public int score;
+    private int score;
+
+    void Start()
+    {
+        //scoreをHPの10倍の数値とする
+        score = (int)(HP * 10);
+    }
 
     void Update()
     {
