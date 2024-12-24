@@ -16,7 +16,7 @@ public static class GlovalValue
     public static int attack = 1;
     //アタック強化倍率
     public static float attackMag = 0.1f;
-    public static float speed = 20.0f;
+    public static float speed = 10.0f;
 
     //?v???C???[?????????
     public static float xLimit;
