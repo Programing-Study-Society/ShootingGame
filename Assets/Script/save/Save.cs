@@ -10,8 +10,7 @@ public class Save : MonoBehaviour
     string filePath;                            // json?t?@?C????p?X
     string fileName = "SaveData.json";              // json?t?@?C????
     string metaFileName = "SaveData.json.meta";
-    int countryNumber = 5;//?????
-
+    
     // json?????f?[?^????
     void jsonSave(SaveData data)
     {
@@ -55,6 +54,7 @@ public class Save : MonoBehaviour
 
         //?i?[?????l??GlobalValue??i?[
         InGlobalValue();
+        Debug.Log(GlovalValue.Difficulty);
     }
 
     //?Z?[?u
@@ -70,6 +70,7 @@ public class Save : MonoBehaviour
     {
         JsonFileDelete();
         endGame();
+        //StartRoad();
     }
 
     //?Q?[???I??
