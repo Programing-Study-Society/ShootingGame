@@ -7,6 +7,7 @@ public class EnemyCollision : MonoBehaviour
     bool isEnemyEnter, isEnemyStay, isEnemyExit;
     
     string ENEMY_TAG = "Enemy";
+    string DESTROYOBJECT_TAG = "CanDestroyObj";
 
     [HideInInspector]
     public GameObject CollisionObject;
@@ -31,10 +32,20 @@ public class EnemyCollision : MonoBehaviour
         return isEnemy;
     }
 
+    public bool NonGameObject(){
+        for(int i = 0; i < colList.Count;i++){
+            if(colList[i]  != null){
+                return true;
+            }
+        }
+        colList.Clear();
+        return false;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == ENEMY_TAG)
+        if (collision.tag == ENEMY_TAG || collision.tag == DESTROYOBJECT_TAG)
         {
             colList.Add (collision.gameObject);
             //Debug.Log("enemy = " + colList.Count);
@@ -47,7 +58,7 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == ENEMY_TAG)
+        if (collision.tag == ENEMY_TAG || collision.tag == DESTROYOBJECT_TAG)
         {
             isEnemyStay = true;
             //Debug.Log("プレイヤーが判定に入り続けています"); 
@@ -57,7 +68,7 @@ public class EnemyCollision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == ENEMY_TAG)
+        if (collision.tag == ENEMY_TAG || collision.tag == DESTROYOBJECT_TAG)
         {
             isEnemyExit = true;
             isEnemyStay = false;

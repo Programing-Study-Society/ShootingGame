@@ -7,6 +7,7 @@ public class Collision : MonoBehaviour
     bool isEnter, isStay, isExit;
     
     public string OBJECT_TAG;
+    public GameObject CollitionObject;
 
     public bool IsObject()
     {
@@ -32,6 +33,7 @@ public class Collision : MonoBehaviour
         if (collision.tag == OBJECT_TAG)
         {
             isEnter = true;
+            CollitionObject = collision.gameObject;
             //Debug.Log("プレイヤーが判定に入りました");
         }
 
