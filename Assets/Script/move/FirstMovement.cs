@@ -20,7 +20,7 @@ public class FirstMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (MoveRange < GlovalValue.yLimit * 2 - speed)
         {

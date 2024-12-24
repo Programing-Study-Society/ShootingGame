@@ -46,7 +46,7 @@ public class Stage4 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //
         time += Time.deltaTime;
@@ -79,6 +79,9 @@ public class Stage4 : MonoBehaviour
             }
             else if(stageCount == 4){
                 Wave4();
+            }
+            else if(stageCount == 5){
+                Wave5();
             }
             
             popCount++;
@@ -153,6 +156,10 @@ public class Stage4 : MonoBehaviour
     }
 
     public void Wave4(){
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+    }
+
+    public void Wave5(){
         Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
     }
 
