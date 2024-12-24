@@ -27,7 +27,7 @@ public class startButton : MonoBehaviour {
             // StartGame関数　
             void StartGame() { 
                 // GameSceneをロード　
-                SceneManager.LoadScene("GameScene1"); 
+                SceneManager.LoadScene("Stage1"); 
                 gameObject.GetComponent<Button>().onClick.AddListener(StartGame); 
             }
         }

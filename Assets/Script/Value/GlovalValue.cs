@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GlovalValue
 {
     //???x????@1:easy,2:normal,3:hard,4:master
-    public static int Difficulty = 0;
+    public static int Difficulty = 2;
     
     //?X?R?A???
     public static int score = 0;
@@ -14,6 +14,8 @@ public static class GlovalValue
     public static int HP = 5;
     public static int MaxHP = 5;
     public static int attack = 1;
+    //アタック強化倍率
+    public static float attackMag = 0.1f;
     public static float speed = 20.0f;
 
     //?v???C???[?????????

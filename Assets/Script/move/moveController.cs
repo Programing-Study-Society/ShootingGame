@@ -16,6 +16,9 @@ public class moveController: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GlovalValue.pauseFlag){
+            return;
+        }
         // 移動処理
         Move();
     }

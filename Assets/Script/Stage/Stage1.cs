@@ -42,7 +42,7 @@ public class Stage1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //
         time += Time.deltaTime;
@@ -74,6 +74,9 @@ public class Stage1 : MonoBehaviour
             }
             else if(stageCount == 4){
                 Wave4();
+            }
+            else if(stageCount == 5){
+                Wave5();
             }
             
             popCount++;
@@ -118,15 +121,18 @@ public class Stage1 : MonoBehaviour
 
     public void Wave1(){
         Vector3 pos = popEnemyPos[stageCount];
-        pos.y += (popCount) * 3.0f;
+        pos.y += (popCount) * 5.0f;
         Pop(popEnemy[stageCount],pos);
         pos.x = -pos.x;
         Pop(popEnemy[stageCount],pos);
     }
 
     public void Wave2(){
-        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
-                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+         Vector3 pos = popEnemyPos[stageCount];
+        pos.y += (popCount) * 10.0f;
+        Pop(popEnemy[stageCount],pos);
+        pos.x = -pos.x;
+        Pop(popEnemy[stageCount],pos);
     }
 
     public void Wave3(){
@@ -135,7 +141,13 @@ public class Stage1 : MonoBehaviour
     }
 
     public void Wave4(){
-        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+    }
+
+    public void Wave5(){
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
     }
 
     //エネミーポップ関数

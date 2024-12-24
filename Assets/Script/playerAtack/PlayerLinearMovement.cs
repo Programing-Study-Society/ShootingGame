@@ -7,7 +7,7 @@ public class PlayerLinearMovement: MonoBehaviour
     [SerializeField, Header("速さ")]
     private float speed;
     [SerializeField, Header("ダメージ")]
-    private int power;
+    private float power;
 
     public EnemyCollision enemyCollision;
 
@@ -35,7 +35,7 @@ public class PlayerLinearMovement: MonoBehaviour
         if(enemyCollision.IsEnemy()){
             if (enemyCollision.CollisionObject != null){
                 EnemyStatas enemyStatas = enemyCollision.CollisionObject.GetComponent<EnemyStatas>();
-                enemyStatas.HP -= power * GlovalValue.attack;
+                enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
                 Destroy(this.gameObject);
             }
         }
