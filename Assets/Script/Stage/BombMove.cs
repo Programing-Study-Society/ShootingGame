@@ -12,10 +12,10 @@ public class BombMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
          
-        pos.y -= 0.05f;
+        pos.y -= 0.15f;
         this.transform.position = pos;
     }
 }
