@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MineExplosion : MonoBehaviour
+public class mineExplosion : MonoBehaviour
 {
     bool isPlayerEnter = false;
     string PLAYER_TAG = "Player";

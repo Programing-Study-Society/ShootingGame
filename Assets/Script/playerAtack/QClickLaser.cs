@@ -35,6 +35,10 @@ public class QClickLaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GlovalValue.pauseFlag){
+            return;
+        }
+        
         if(attackNumber == 1){
             Raser();
         }

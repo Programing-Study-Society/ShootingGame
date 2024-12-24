@@ -8,7 +8,7 @@ public class LaserMovement : MonoBehaviour
     private float speed;
 
     [SerializeField, Header("ダメージ")]
-    private int power;
+    private float power;
 
     public EnemyCollision enemyCollision;
 
@@ -16,6 +16,9 @@ public class LaserMovement : MonoBehaviour
     private Vector3 thisScale;
 
     private float actualTime = 2.0f;
+
+    private float lateTime = 0.45f;
+    private float time = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,15 @@ public class LaserMovement : MonoBehaviour
     void Update()
     {
         Move();
+        time += Time.deltaTime;
+
+        //lateTime以下なら実行しない
+        if (time < lateTime)
+        {
+            return;
+        }
         Attack();
+        time = 0.0f;
     }
 
     private void Move()
@@ -50,7 +61,7 @@ public class LaserMovement : MonoBehaviour
             for(int i = 0; i < enemyCollision.colList.Count ; i++){
                 if (enemyCollision.colList[i] != null){
                     EnemyStatas enemyStatas = enemyCollision.colList[i].GetComponent<EnemyStatas>();
-                    enemyStatas.HP -= power * GlovalValue.attack;
+                    enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
                 
                 }
             } 

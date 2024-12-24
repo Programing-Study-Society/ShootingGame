@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Stage2 : MonoBehaviour
 {
-   [SerializeField, Header("画面範囲内にエネミーがいるか判定")]
+    [SerializeField, Header("画面範囲内にエネミーがいるか判定")]
     public StageEnemyCollision enemyCollision;
 
     [SerializeField, Header("main Camera")]
     public GameObject mainCamera;
+
+    [SerializeField, Header("障害物（爆弾）")]
+    public GameObject bombObject;
 
     [SerializeField, Header("ポップしたいエネミーを順番に入れる")]
     public List<GameObject> popEnemy;
@@ -16,8 +19,11 @@ public class Stage2 : MonoBehaviour
     [SerializeField, Header("ポップしたいエネミーのポップ数を入れる")]
     public List<int> popEnemyCount;
 
-    [SerializeField, Header("ポップしたいエネミーの座標を入れる")]
+    [SerializeField, Header("ポップしたいエネミーのポジションを入れる")]
     public List<Vector3> popEnemyPos;
+
+    [SerializeField, Header("ポップしたいエネミーを何ウェーブ目に出現させるか入力する")]
+    public List<int> popEnemyWave;
 
     [SerializeField, Header("ポップし終わった後の待ち時間")]
     public float lateTime = 1.0f;
@@ -27,20 +33,24 @@ public class Stage2 : MonoBehaviour
 
     //待った時間
     private float time = 0.0f;
+    private float bombTime = 0.0f;
     
     //ポップした数
     private int popCount = 0;
+    
+    private int waveCount = 1;
 
     void Start()
     {
-        Debug.Log("stage:" + (stageCount + 1));
+        Debug.Log("stage:" + waveCount);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //
         time += Time.deltaTime;
+        BombPop();
 
         //lateTime以下なら実行しない
         if (time < lateTime)
@@ -61,16 +71,16 @@ public class Stage2 : MonoBehaviour
             if(stageCount == 0){
                 Wave1();
             }
-            else if(stageCount == 1 ){
+            else if(stageCount == 1){
                 Wave2();
             }
-            else if(stageCount == 2){
+            else if(stageCount == 2 || stageCount == 3){
                 Wave3();
             }
-            else if(stageCount == 3){
+            else if(stageCount == 4){
                 Wave4();
             }
-            else if(stageCount == 4){
+            else if(stageCount == 5){
                 Wave5();
             }
             
@@ -78,6 +88,14 @@ public class Stage2 : MonoBehaviour
         }
         else
         {
+            //次のエネミーを連続で出現させたい時実行
+            if(stageCount < popEnemyWave.Count - 1){
+                if(popEnemyWave[stageCount] == popEnemyWave[stageCount + 1]){
+                    stageCount += 1;
+                    popCount = 0;
+                }
+            }
+            
             //エネミーが画面上にいなくなったら実行
             if (!enemyCollision.NonGameObject())
             {
@@ -95,7 +113,8 @@ public class Stage2 : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("stage:" + (stageCount + 1));
+                        waveCount += 1;
+                        Debug.Log("stage:" + waveCount);
                         popCount = 0;
                     }
 
@@ -105,8 +124,21 @@ public class Stage2 : MonoBehaviour
         time = 0;
     }
 
+    public void BombPop(){
+        bombTime += Time.deltaTime;
+        if(bombTime <= 1.0){
+            return;
+        }
+        int randam = Random.Range(1,5);
+        for(int i = 0;i < randam;i++){
+            Pop(bombObject, new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+        }
+        bombTime = 0.0f;
+    }
+
     public void Wave1(){
-        Vector3 pos = popEnemyPos[stageCount]; 
+        Vector3 pos = popEnemyPos[stageCount];
         pos.y += (popCount) * 3.0f;
         Pop(popEnemy[stageCount],pos);
         pos.x = -pos.x;
@@ -124,12 +156,12 @@ public class Stage2 : MonoBehaviour
     }
 
     public void Wave4(){
-        Pop(popEnemy[stageCount + 5], popEnemyPos[stageCount]);
-    }
-    public void Wave5(){
         Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
     }
 
+    public void Wave5(){
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+    }
 
     //エネミーポップ関数
     public void Pop(GameObject enemyObject,Vector3 initialPosition)
@@ -142,4 +174,3 @@ public class Stage2 : MonoBehaviour
         enemyObj1.transform.position = initialPosition;
     }
 }
- 
