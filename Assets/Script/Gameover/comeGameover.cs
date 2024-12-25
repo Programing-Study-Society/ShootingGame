@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-    //emptyにいれ、全ゲームシーンに導入。gameoverを呼び出す。
+    //これは使わない。
 public static class comeGameover
 {
     //シーン名を保存

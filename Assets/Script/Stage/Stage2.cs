@@ -10,9 +10,6 @@ public class Stage2 : MonoBehaviour
     [SerializeField, Header("main Camera")]
     public GameObject mainCamera;
 
-    [SerializeField, Header("障害物（爆弾）")]
-    public GameObject bombObject;
-
     [SerializeField, Header("ポップしたいエネミーを順番に入れる")]
     public List<GameObject> popEnemy;
 
@@ -33,7 +30,7 @@ public class Stage2 : MonoBehaviour
 
     //待った時間
     private float time = 0.0f;
-    private float bombTime = 0.0f;
+    //private float bombTime = 0.0f;
     
     //ポップした数
     private int popCount = 0;
@@ -50,7 +47,6 @@ public class Stage2 : MonoBehaviour
     {
         //
         time += Time.deltaTime;
-        BombPop();
 
         //lateTime以下なら実行しない
         if (time < lateTime)
@@ -59,7 +55,7 @@ public class Stage2 : MonoBehaviour
         }
 
         //stageCountがポップするエネミー数以上なら実行しない
-        //Debug.Log(stageCount);
+        Debug.Log(stageCount);
         if(stageCount >= popEnemy.Count)
         {
             return;
@@ -99,7 +95,7 @@ public class Stage2 : MonoBehaviour
             //エネミーが画面上にいなくなったら実行
             if (!enemyCollision.NonGameObject())
             {
-                //Debug.Log(enemyCollision.NonGameObject());
+                Debug.Log(enemyCollision.NonGameObject());
                 //popEnemyがstageCount以上なら実行
                 if (popEnemy.Count >= stageCount)
                 {
@@ -124,35 +120,28 @@ public class Stage2 : MonoBehaviour
         time = 0;
     }
 
-    public void BombPop(){
-        bombTime += Time.deltaTime;
-        if(bombTime <= 1.0){
-            return;
-        }
-        int randam = Random.Range(1,5);
-        for(int i = 0;i < randam;i++){
-            Pop(bombObject, new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
-                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
-        }
-        bombTime = 0.0f;
-    }
-
     public void Wave1(){
-        Vector3 pos = popEnemyPos[stageCount];
+        /*Vector3 pos = popEnemyPos[stageCount];
         pos.y += (popCount) * 3.0f;
         Pop(popEnemy[stageCount],pos);
         pos.x = -pos.x;
-        Pop(popEnemy[stageCount],pos);
+        Pop(popEnemy[stageCount],pos);*/
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+
     }
 
     public void Wave2(){
-        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+        lateTime = 4;
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 0.5f, GlovalValue.xLimit - 0.5f),
                                  Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
     }
 
     public void Wave3(){
-        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
-                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+        lateTime = 1;
+        Vector3 pos = popEnemyPos[stageCount];
+        Pop(popEnemy[stageCount],pos);
+        pos.x = -pos.x;
+        Pop(popEnemy[stageCount],pos);
     }
 
     public void Wave4(){
@@ -160,7 +149,9 @@ public class Stage2 : MonoBehaviour
     }
 
     public void Wave5(){
-        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+        Vector3 pos = popEnemyPos[stageCount];
+        pos.y += (popCount) * 3.0f;
+        Pop(popEnemy[stageCount],pos);
     }
 
     //エネミーポップ関数
