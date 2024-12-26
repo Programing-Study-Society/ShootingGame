@@ -16,14 +16,14 @@ public static class GlovalValue
     public static int attack = 1;
     //アタック強化倍率
     public static float attackMag = 0.1f;
-    public static float speed = 10.0f;
+    public static float speed = 5.0f;
 
     //?v???C???[?????????
     public static float xLimit;
     public static float yLimit;
 
     //????????????
-    public static int qAvilityNumber = 2;//1,???? : 2,????
+    public static int qAvilityNumber = 1;//1,???? : 2,????
     public static int rightClickAvilityNumber = 1;//1,??? : 2,?????
 
     public static int[,] ScoreList = new int[4,5]{
