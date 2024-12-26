@@ -865,7 +865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -959.99994, y: 540}
+  m_AnchoredPosition: {x: -960, y: 540}
   m_SizeDelta: {x: -1920.0001, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &844233979
@@ -1874,6 +1874,8 @@ MonoBehaviour:
   SPD: 1
   explotionEffect: {fileID: 0}
   score: 0
+  itemPrefab: {fileID: 0}
+  perdrop: 0
 --- !u!212 &1736731715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2535,7 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCollision: {fileID: 661221024}
   mainCamera: {fileID: 1901999991}
-  bombObject: {fileID: 7725759545742105258, guid: 0c6c68af062a5dc4384924aaa8be10f2, type: 3}
+  bombObject: {fileID: 7725759545742105258, guid: c3bc05a2340d19a46a4ecc0ac490142f, type: 3}
   popEnemy:
   - {fileID: 4316502659923598896, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
   - {fileID: 2620572931210816415, guid: d7afddd975e40384087d23dc32f45151, type: 3}
@@ -3100,12 +3102,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 937991920790414310, guid: f0ccc4edca33bf14baa565c63b089504, type: 3}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 67ccf31687dd65b469f7d5fb43faf15c, type: 3}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_SortingLayer
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_SortingLayerID
       value: -184104921
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232967, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_RootOrder

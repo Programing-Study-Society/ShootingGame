@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerStatas : MonoBehaviour
 {
-    [SerializeField, Header("�v���C���[��HP")]
+    [SerializeField, Header("HP")]
     public int HP;
-    [SerializeField, Header("�v���C���[�̍U����")]
+    [SerializeField, Header("attack")]
     public int ATK;
-    [SerializeField, Header("�v���C���[�̑��x")]
+    [SerializeField, Header("speed")]
     public float SPD;
 
     // Start is called before the first frame update

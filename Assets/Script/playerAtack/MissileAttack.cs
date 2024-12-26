@@ -12,6 +12,8 @@ public class MissileAttack : MonoBehaviour
 
     [SerializeField, Header("ミサイルコリジョン")]public EnemyCollision enemyCollision;
 
+    [SerializeField, Header("PlayerStatas")]public PlayerStatas playerStatas;
+
     [HideInInspector]public GameObject SearchObject;
 
     [HideInInspector]public int searchEnemyNumber = -1;
@@ -52,7 +54,7 @@ public class MissileAttack : MonoBehaviour
         if(enemyCollision.IsEnemy()){
             if (enemyCollision.CollisionObject != null){
                 EnemyStatas enemyStatas = enemyCollision.CollisionObject.GetComponent<EnemyStatas>();
-                enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
+                enemyStatas.HP -= power + power * (float)(playerStatas.ATK * GlovalValue.attackMag);
                 Destroy(this.gameObject);
                 GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
                 Destroy(effect, 0.5f);

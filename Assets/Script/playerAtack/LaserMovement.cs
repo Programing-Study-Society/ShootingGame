@@ -10,6 +10,8 @@ public class LaserMovement : MonoBehaviour
     [SerializeField, Header("ダメージ")]
     private float power;
 
+    [SerializeField, Header("PlayerStatas")]public PlayerStatas playerStatas;
+
     public EnemyCollision enemyCollision;
 
     private Rigidbody2D rigid;
@@ -60,7 +62,7 @@ public class LaserMovement : MonoBehaviour
             for(int i = 0; i < enemyCollision.colList.Count ; i++){
                 if (enemyCollision.colList[i] != null){
                     EnemyStatas enemyStatas = enemyCollision.colList[i].GetComponent<EnemyStatas>();
-                    enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
+                    enemyStatas.HP -= power + power * (float)(playerStatas.ATK * GlovalValue.attackMag);
                     time = 0.0f;
                     //Debug.Log(enemyStatas.HP);
                 }

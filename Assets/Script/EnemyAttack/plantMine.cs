@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantMine : MonoBehaviour
+public class plantMine : MonoBehaviour
 {
     [SerializeField, Header("地雷オブジェクト")]
     private GameObject attack1;

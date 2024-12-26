@@ -4,42 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CastomButton : MonoBehaviour
 {
-    [HideInInspector]public Text castomAttack;
-    [HideInInspector]public Text castomMaxHP;
-    [HideInInspector]public Text castomSpeed;
-    [HideInInspector]public Text castomRightClickAvilityNumber;
-    [HideInInspector]public Text castomQAvilityNumber;
-    public List<Text> castomTextList;
+    public Text castomAttack;
+    public Text castomMaxHP;
+    public Text castomSpeed;
+    public Text castomRightClickAvilityNumber;
+    public Text castomQAvilityNumber;
+
     // Start is called before the first frame update
     void Start()
     {
-        // castomAttack = GlovalValue.attack;
-        // castomMaxHP = GlovalValue.MaxHP;
-        // castomSpeed = GlovalValue.speed;
-        // castomRightClickAvilityNumber = GlovalValue.rightClickAvilityNumber;
-        // castomQAvilityNumber = GlovalValue.qAvilityNumber;
+        ChengeText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void ChengeText(){
+        castomAttack.text = "攻撃力:" + (GlovalValue.attack * 10).ToString() + "%";
+        castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString() + "%";
+        castomSpeed.text = "速さ:" + GlovalValue.speed.ToString() + "%";
         
+        if(GlovalValue.rightClickAvilityNumber == 1){
+            castomRightClickAvilityNumber.text = "バリア";
+        }else{
+            castomRightClickAvilityNumber.text = "防御用ボム";
+        }
+        
+        if(GlovalValue.qAvilityNumber == 1){
+            castomQAvilityNumber.text = "レーザー";
+        }else{
+            castomQAvilityNumber.text = "ミサイル";
+        }
     }
-
-    public void TextChenge(){
-        castomTextList[0].text = castomAttack.ToString() + "%";
-
-    }
-    public void AttackChengeButton(bool flag){
+    public void AttackChengeButton(bool flag){//アタックをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
             GlovalValue.attack++;
         }else{
             GlovalValue.attack--;
         }
-        castomAttack.text = "攻撃力:" + GlovalValue.attack.ToString() + "%";
+        castomAttack.text = "攻撃力:" + (GlovalValue.attack * 10).ToString() + "%";
     }
 
-    public void MaxHPChengeButton(bool flag){
+    public void MaxHPChengeButton(bool flag){//HPをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
             GlovalValue.MaxHP++;
         }else{
@@ -48,7 +51,7 @@ public class CastomButton : MonoBehaviour
         castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString() + "%";
     }
 
-    public void SpeedChengeButton(bool flag){
+    public void SpeedChengeButton(bool flag){//スピードをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
             GlovalValue.speed++;
         }else{
@@ -57,13 +60,23 @@ public class CastomButton : MonoBehaviour
         castomSpeed.text = "速さ:" + GlovalValue.speed.ToString() + "%";
     }
 
-    public void RightClickAvilityNumberChengeButton(){
+    public void RightClickAvilityNumberChengeButton(){//RRightClickAvilityを変更する
         if(GlovalValue.rightClickAvilityNumber == 2){
             GlovalValue.rightClickAvilityNumber = 1;
-            castomRightClickAvilityNumber.text = "レーザー";
+            castomRightClickAvilityNumber.text = "バリア";
         }else{
             GlovalValue.rightClickAvilityNumber = 2;
-            castomRightClickAvilityNumber.text = "ミサイル";
+            castomRightClickAvilityNumber.text = "防御用ボム";
+        }
+    }
+
+    public void QAvilityNumberChengeButton(){//QAvilityを変更する
+        if(GlovalValue.qAvilityNumber == 2){
+            GlovalValue.qAvilityNumber = 1;
+            castomQAvilityNumber.text = "レーザー";
+        }else{
+            GlovalValue.qAvilityNumber = 2;
+            castomQAvilityNumber.text = "ミサイル";
         }
     }
 }
