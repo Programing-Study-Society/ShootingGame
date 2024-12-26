@@ -12,7 +12,7 @@ public class Item_Shot : MonoBehaviour
 {
     if (other.gameObject.CompareTag("Player"))
     {
-        // 弾の強化処理
+        // 弾のダメージ強化処理
         attack += 1;
 
         // アイテムを消す
