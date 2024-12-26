@@ -3,19 +3,23 @@ using System.Collections;
 
 public class moveController: MonoBehaviour
 {
-    [HideInInspector]public float speed = GlovalValue.speed / 100;
+    [HideInInspector]public float speed;
     // 速度
-    [HideInInspector]public Vector2 SPEED = new Vector2(GlovalValue.speed / 100, GlovalValue.speed / 100);
+    [HideInInspector]public Vector2 SPEED;
+    public PlayerStatas playerStatas;
     // Use this for initialization
     void Start()
     {
-        SPEED = new Vector2(GlovalValue.speed / 100, GlovalValue.speed / 100);
-        speed = GlovalValue.speed / 100;
+        speed = playerStatas.SPD / 100;
+        SPEED = new Vector2(playerStatas.SPD / 100, playerStatas.SPD / 100);
     }
 
     // Update is called once per frame
     void Update()
     {
+        speed = playerStatas.SPD / 100;
+        SPEED = new Vector2(playerStatas.SPD / 100, playerStatas.SPD / 100);
+
         if(GlovalValue.pauseFlag){
             return;
         }
