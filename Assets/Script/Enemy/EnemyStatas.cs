@@ -40,8 +40,10 @@ public class EnemyStatas : MonoBehaviour
             GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
             int rnd = Random.Range(0,100); // ※ 0～99の範囲でランダムな小数点数値が返る
-            if(rnd <= perdrop)
-            Instantiate(itemPrefab, transform.position,Quaternion.identity);
+            if (itemPrefab != null){
+                if(rnd <= perdrop)Instantiate(itemPrefab, transform.position,Quaternion.identity);
+            }
+            
         }
     }
 }
