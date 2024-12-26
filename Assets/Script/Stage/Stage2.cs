@@ -64,22 +64,24 @@ public class Stage2 : MonoBehaviour
         //popCountがpopEnemyCount以下なら実行
         if (popCount < popEnemyCount[stageCount])
         {
-            if(stageCount == 0){
+            if(waveCount == 1){
                 Wave1();
             }
-            else if(stageCount == 1){
+            else if(waveCount == 2){
                 Wave2();
             }
-            else if(stageCount == 2 || stageCount == 3){
+            else if(waveCount == 3){
                 Wave3();
             }
-            else if(stageCount == 4){
+            else if(waveCount == 4){
                 Wave4();
             }
-            else if(stageCount == 5){
+            else if(waveCount == 5){
                 Wave5();
             }
-            
+            else if(waveCount == 6){
+                Wave6();
+            }
             popCount++;
         }
         else
@@ -121,37 +123,35 @@ public class Stage2 : MonoBehaviour
     }
 
     public void Wave1(){
-        /*Vector3 pos = popEnemyPos[stageCount];
-        pos.y += (popCount) * 3.0f;
-        Pop(popEnemy[stageCount],pos);
-        pos.x = -pos.x;
-        Pop(popEnemy[stageCount],pos);*/
         Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
-
     }
 
     public void Wave2(){
-        lateTime = 4;
-        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 0.5f, GlovalValue.xLimit - 0.5f),
-                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
-    }
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
 
+        //Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 0.5f, GlovalValue.xLimit - 0.5f),Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+    }
     public void Wave3(){
+        Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+        //Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 0.5f, GlovalValue.xLimit - 0.5f),Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+    }
+    public void Wave4(){
         lateTime = 1;
         Vector3 pos = popEnemyPos[stageCount];
+        pos.y -= (popCount) * 3.0f;
         Pop(popEnemy[stageCount],pos);
         pos.x = -pos.x;
         Pop(popEnemy[stageCount],pos);
     }
 
-    public void Wave4(){
+    public void Wave5(){
         Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
     }
 
-    public void Wave5(){
-        Vector3 pos = popEnemyPos[stageCount];
-        pos.y += (popCount) * 3.0f;
-        Pop(popEnemy[stageCount],pos);
+    public void Wave6(){
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+        lateTime = 3.5f;
     }
 
     //エネミーポップ関数

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Item_heal : MonoBehaviour
 {
     public int playerHP;
-    public moveController control;
+    //public moveController control;
     private string playerTag = "Player";
     void OnTriggerEnter2D(Collider2D other)
 {

@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class startButton : MonoBehaviour {  
     
+    public GameObject gameObject;
+
     //始まった時に実行する関数　　
     void Start () {
         if (GlovalValue.Difficulty == 0) {
@@ -27,7 +29,7 @@ public class startButton : MonoBehaviour {
             // StartGame関数　
             void StartGame() { 
                 // GameSceneをロード　
-                SceneManager.LoadScene("GameScene1"); 
+                SceneManager.LoadScene("Home_Scene"); 
                 gameObject.GetComponent<Button>().onClick.AddListener(StartGame); 
             }
         }

@@ -11,12 +11,12 @@ public static class GlovalValue
     public static int score = 0;
 
     //?v???C???[?X?e?[?^?X
-    public static int HP = 5;
-    public static int MaxHP = 5;
+    public static int HP = 20;
+    public static int MaxHP = 20;
     public static int attack = 1;
     //アタック強化倍率
     public static float attackMag = 0.1f;
-    public static float speed = 20.0f;
+    public static float speed = 10.0f;
 
     //?v???C???[?????????
     public static float xLimit;
@@ -24,7 +24,7 @@ public static class GlovalValue
 
     //????????????
     public static int qAvilityNumber = 2;//1,???? : 2,????
-    public static int rightClickAvilityNumber = 2;//1,??? : 2,?????
+    public static int rightClickAvilityNumber = 1;//1,??? : 2,?????
 
     public static int[,] ScoreList = new int[4,5]{
         {0,1,2,3,4},
