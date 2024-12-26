@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class PlayerStatas : MonoBehaviour
 {
-    [SerializeField, Header("�v���C���[��HP")]
+    [SerializeField, Header("HP")]
     public int HP;
-    [SerializeField, Header("�v���C���[�̍U����")]
+    [SerializeField, Header("attack")]
     public int ATK;
-    [SerializeField, Header("�v���C���[�̑��x")]
+    [SerializeField, Header("speed")]
     public float SPD;
 
     // Start is called before the first frame update
     void Start()
     {
-        HP = GlovalValue.HP;
+        HP = GlovalValue.MaxHP;
+        ATK = GlovalValue.attack;
+        SPD = GlovalValue.speed;
+    }
+    public void StartStatas(){
+        HP = GlovalValue.MaxHP;
         ATK = GlovalValue.attack;
         SPD = GlovalValue.speed;
     }

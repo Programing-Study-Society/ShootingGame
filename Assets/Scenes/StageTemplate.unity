@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refCamera: {fileID: 1901999993}
-  refRect: {fileID: 0}
+  refRect: {fileID: 1375504416}
   referenceResolution: {x: 1920, y: 1080}
   matchWidthOrHeight: 0
 --- !u!1 &860339353

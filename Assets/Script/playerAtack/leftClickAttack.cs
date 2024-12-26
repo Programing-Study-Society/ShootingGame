@@ -9,9 +9,12 @@ public class leftClickAttack : MonoBehaviour
 
     [SerializeField, Header("弾を発射する時間")]
     private float shootTime = 0.5f;
+    private float stragTime = 10.0f;
 
     private float shootCount;
     private float StrengtheningshootCount;
+
+    private float strengTimeCount;
 
     //強化されているかどうか判別する変数
     public bool attackStrengthening = false;
@@ -23,14 +26,23 @@ public class leftClickAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shootCount = 0;
-        StrengtheningshootCount = 0;
+        shootCount = 0.0f;
+        StrengtheningshootCount = 0.0f;
+        strengTimeCount = 0.0f;
         attackCount = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(attackStrengthening){
+            if(strengTimeCount >= stragTime){
+                attackStrengthening = false;
+                strengTimeCount = 0.0f;
+            }else{
+                strengTimeCount += Time.deltaTime;
+            }
+        }
         if(GlovalValue.pauseFlag){
             return;
         }
@@ -47,7 +59,7 @@ public class leftClickAttack : MonoBehaviour
             if (shootCount < shootTime) return;
             if(attackStrengthening){
                 StrengtheningshootCount += Time.deltaTime;
-                if (StrengtheningshootCount < 0.1 && attackCount != 0) return;
+                if (StrengtheningshootCount < 0.05 && attackCount != 0) return;
                 AttackInstant();
                 StrengtheningshootCount = 0;
                 if(attackCount < 3){

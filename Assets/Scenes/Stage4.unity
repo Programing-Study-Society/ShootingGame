@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,8 +155,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65098320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 150, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 185, z: 1}
+  m_LocalPosition: {x: 450, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698379745}
@@ -558,7 +558,7 @@ RectTransform:
   m_GameObject: {fileID: 576724931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.8584023, y: 4.8584023, z: 4.8584023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1375504416}
@@ -566,8 +566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 800, y: 490}
-  m_SizeDelta: {x: 82.119, y: 18.087}
+  m_AnchoredPosition: {x: 680, y: 490}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576724933
 MonoBehaviour:
@@ -604,11 +604,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 7
+    m_MaxSize: 70
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -865,7 +865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -959.99994, y: 540}
+  m_AnchoredPosition: {x: -960, y: 540}
   m_SizeDelta: {x: -1920.0001, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &844233979
@@ -1337,8 +1337,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202515044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -150, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 185, z: 1}
+  m_LocalPosition: {x: -450, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698379745}
@@ -1874,6 +1874,8 @@ MonoBehaviour:
   SPD: 1
   explotionEffect: {fileID: 0}
   score: 0
+  itemPrefab: {fileID: 0}
+  perdrop: 0
 --- !u!212 &1736731715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1923,7 +1925,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &1736731718
@@ -2063,8 +2065,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833522716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
-  m_LocalScale: {x: 300, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 300, z: 0}
+  m_LocalScale: {x: 900, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698379745}
@@ -2498,6 +2500,7 @@ GameObject:
   - component: {fileID: 2000851624}
   - component: {fileID: 2000851625}
   - component: {fileID: 2000851626}
+  - component: {fileID: 2000851627}
   m_Layer: 0
   m_Name: stageGimmick
   m_TagString: Untagged
@@ -2534,7 +2537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCollision: {fileID: 661221024}
   mainCamera: {fileID: 1901999991}
-  bombObject: {fileID: 7725759545742105258, guid: c3bc05a2340d19a46a4ecc0ac490142f, type: 3}
+  bombObject: {fileID: 7725759545742105258, guid: 0c6c68af062a5dc4384924aaa8be10f2, type: 3}
   popEnemy:
   - {fileID: 4316502659923598896, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
   - {fileID: 2620572931210816415, guid: d7afddd975e40384087d23dc32f45151, type: 3}
@@ -2568,8 +2571,21 @@ MonoBehaviour:
   mainCamera: {fileID: 1901999991}
   popEnemy:
   - {fileID: 4316502659923598896, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
+  - {fileID: 2620572931210816415, guid: 1e8f1d54d54a3ce4c8239dd015344f4e, type: 3}
   popEnemyCount: 01000000
   lateTime: 1
+--- !u!114 &2000851627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000851622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a720ec091c48e0e46bf8c4e5664e7a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2003768481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,8 +2689,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045723043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -100, z: 0}
-  m_LocalScale: {x: 300, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: -300, z: 0}
+  m_LocalScale: {x: 900, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698379745}
@@ -3084,11 +3100,19 @@ PrefabInstance:
     - target: {fileID: 5984803761222232965, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: Attack
       value: 
-      objectReference: {fileID: 937991920790414310, guid: d2a6d5615518d0c4ea31c6c37965aee9, type: 3}
+      objectReference: {fileID: 937991920790414310, guid: f0ccc4edca33bf14baa565c63b089504, type: 3}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 67ccf31687dd65b469f7d5fb43faf15c, type: 3}
+      objectReference: {fileID: 21300000, guid: 8dedc55747a661540bdaee2f3f787a85, type: 3}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_SortingLayer
       value: 4
