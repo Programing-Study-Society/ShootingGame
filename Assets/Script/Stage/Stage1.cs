@@ -120,11 +120,8 @@ public class Stage1 : MonoBehaviour
     }
 
     public void Wave1(){
-        Vector3 pos = popEnemyPos[stageCount];
-        pos.y += (popCount) * 5.0f;
-        Pop(popEnemy[stageCount],pos);
-        pos.x = -pos.x;
-        Pop(popEnemy[stageCount],pos);
+        Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
     }
 
     public void Wave2(){

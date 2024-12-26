@@ -2497,6 +2497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000851624}
   - component: {fileID: 2000851625}
+  - component: {fileID: 2000851626}
   m_Layer: 0
   m_Name: stageGimmick
   m_TagString: Untagged
@@ -2536,19 +2537,47 @@ MonoBehaviour:
   bombObject: {fileID: 7725759545742105258, guid: 0c6c68af062a5dc4384924aaa8be10f2, type: 3}
   popEnemy:
   - {fileID: 4316502659923598896, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
+<<<<<<< HEAD
   - {fileID: 4316502659388314679}
   - {fileID: 4316502659388314679}
   - {fileID: 4316502659388314679}
   - {fileID: 4316502659388314679}
   popEnemyCount: 0600000004000000020000000200000001000000
+=======
+  - {fileID: 2620572931210816415, guid: d7afddd975e40384087d23dc32f45151, type: 3}
+  - {fileID: 4316502659923598896, guid: e40482334ca01094fb461b78f8f4b605, type: 3}
+  - {fileID: 2620572931210816415, guid: 6a1ae8e9429fea8409dad9bae7d30221, type: 3}
+  - {fileID: 2620572931210816415, guid: 1e8f1d54d54a3ce4c8239dd015344f4e, type: 3}
+  - {fileID: 4316502659923598896, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
+  popEnemyCount: 060000000400000002000000020000000100000001000000
+>>>>>>> 44a6879d4ad6f716793f910503a5a0ded19c9b89
   popEnemyPos:
   - {x: -18, y: -7, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 3, z: 0}
-  popEnemyWave: 0100000002000000030000000300000004000000
+  - {x: 0, y: 3, z: 0}
+  popEnemyWave: 010000000200000003000000030000000400000005000000
   lateTime: 0.5
+--- !u!114 &2000851626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000851622}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1356c98ba9f6b0843b23945b9e2f219d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCollision: {fileID: 661221024}
+  mainCamera: {fileID: 1901999991}
+  popEnemy:
+  - {fileID: 4316502659923598896, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
+  popEnemyCount: 01000000
+  lateTime: 1
 --- !u!1 &2003768481
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,7 +3168,7 @@ PrefabInstance:
       objectReference: {fileID: 1667461646}
     - target: {fileID: 6519196625895254652, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: avirityNumber
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6519196625895254652, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: avirityList.Array.size
