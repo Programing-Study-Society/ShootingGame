@@ -497,9 +497,9 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2620572931210816385, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
-      propertyPath: itemPrefab
-      value: 
-      objectReference: {fileID: 1842073773}
+      propertyPath: colList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2620572931210816387, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: player
       value: 
@@ -1554,6 +1554,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 833108882659689212, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
+      propertyPath: itemPrefab.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 833108882659689213, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2254,7 +2258,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -959.99976, y: 540}
+  m_AnchoredPosition: {x: -959.9997, y: 540}
   m_SizeDelta: {x: -1920.0001, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1267502483
@@ -2525,8 +2529,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 2675795129309071157, guid: 4b5d1756af8e19e428700de76406be1c, type: 3}
+  colList: []
   perdrop: 80
   enemyStatas: {fileID: 1482745884}
+  listnum: 0
 --- !u!114 &1482745884 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4316502659923598897, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
@@ -2645,8 +2651,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 7286552639462081304, guid: f6ad693fb8113154a803d2e20cffef82, type: 3}
+  colList: []
   perdrop: 60
   enemyStatas: {fileID: 1485809180}
+  listnum: 0
 --- !u!1001 &1488361153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2784,6 +2792,10 @@ PrefabInstance:
       propertyPath: control
       value: 
       objectReference: {fileID: 1680444178}
+    - target: {fileID: 3523295491175363030, guid: dc35c6826bba7c04680d1e9788f4ba0d, type: 3}
+      propertyPath: playerstatas
+      value: 
+      objectReference: {fileID: 1680444172}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc35c6826bba7c04680d1e9788f4ba0d, type: 3}
 --- !u!1001 &1585367393
@@ -3129,9 +3141,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 937991920790414310, guid: d2a6d5615518d0c4ea31c6c37965aee9, type: 3}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_Size.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 67ccf31687dd65b469f7d5fb43faf15c, type: 3}
+      objectReference: {fileID: 21300000, guid: 8dedc55747a661540bdaee2f3f787a85, type: 3}
     - target: {fileID: 5984803761222232966, guid: ef68ede90a098e540876702b8b4efd3a, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -3303,8 +3323,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 0}
+  colList: []
   perdrop: 0
   enemyStatas: {fileID: 0}
+  listnum: 0
 --- !u!1 &1730637331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,11 +3543,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781773708}
   m_CullTransparentMesh: 1
---- !u!1 &1842073773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2994008959666810996, guid: dc35c6826bba7c04680d1e9788f4ba0d, type: 3}
-  m_PrefabInstance: {fileID: 1518778465}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1842073774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2111093636995855203, guid: dc35c6826bba7c04680d1e9788f4ba0d, type: 3}
@@ -3548,7 +3565,7 @@ PrefabInstance:
       objectReference: {fileID: 1680444177}
     - target: {fileID: 624302833210279649, guid: 4b5d1756af8e19e428700de76406be1c, type: 3}
       propertyPath: attackStrengthening
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2675795129309071157, guid: 4b5d1756af8e19e428700de76406be1c, type: 3}
       propertyPath: m_Name
@@ -3731,8 +3748,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 7286552639462081304, guid: f6ad693fb8113154a803d2e20cffef82, type: 3}
+  colList: []
   perdrop: 60
   enemyStatas: {fileID: 2027751250}
+  listnum: 0
 --- !u!1 &2056930814
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,15 @@ public class Item_drop : MonoBehaviour
     [SerializeField, Header("ドロップアイテム")]
     public GameObject itemPrefab;
 
+    public List<GameObject> colList = new List<GameObject> ();
+
+
     [SerializeField, Header("ドロップ確率")]
     public int perdrop;
 
     public EnemyStatas enemyStatas;
+
+    public int listnum;
     void Update()
     {
 
