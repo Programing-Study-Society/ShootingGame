@@ -18,7 +18,7 @@ public class CastomButton : MonoBehaviour
 
     public void ChengeText(){
         castomAttack.text = "攻撃力:" + (GlovalValue.attack * 10).ToString() + "%";
-        castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString() + "%";
+        castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString();
         castomSpeed.text = "速さ:" + GlovalValue.speed.ToString() + "%";
         
         if(GlovalValue.rightClickAvilityNumber == 1){
@@ -37,7 +37,9 @@ public class CastomButton : MonoBehaviour
         if(flag){
             GlovalValue.attack++;
         }else{
-            GlovalValue.attack--;
+            if(GlovalValue.attack > 0){
+                GlovalValue.attack--;
+            }
         }
         castomAttack.text = "攻撃力:" + (GlovalValue.attack * 10).ToString() + "%";
     }
@@ -46,21 +48,25 @@ public class CastomButton : MonoBehaviour
         if(flag){
             GlovalValue.MaxHP++;
         }else{
-            GlovalValue.MaxHP--;
+            if(GlovalValue.MaxHP > 1){
+                GlovalValue.MaxHP--;
+            }
         }
-        castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString() + "%";
+        castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString();
     }
 
     public void SpeedChengeButton(bool flag){//スピードをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
             GlovalValue.speed++;
         }else{
-            GlovalValue.speed--;
+            if(GlovalValue.speed > 0){
+                GlovalValue.speed--;
+            }
         }
         castomSpeed.text = "速さ:" + GlovalValue.speed.ToString() + "%";
     }
 
-    public void RightClickAvilityNumberChengeButton(){//RRightClickAvilityを変更する
+    public void RightClickAvilityNumberChengeButton(){//RightClickAvilityを変更する
         if(GlovalValue.rightClickAvilityNumber == 2){
             GlovalValue.rightClickAvilityNumber = 1;
             castomRightClickAvilityNumber.text = "バリア";

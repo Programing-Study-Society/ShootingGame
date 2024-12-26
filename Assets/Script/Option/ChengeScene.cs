@@ -12,6 +12,7 @@ public class ChengeScene : MonoBehaviour
         this.gameObject.GetComponent<Button>().onClick.AddListener(OnClick);
         
         void OnClick(){
+            GlovalValue.HP = GlovalValue.MaxHP;
             SceneManager.LoadScene(SceneName);
         }
     }

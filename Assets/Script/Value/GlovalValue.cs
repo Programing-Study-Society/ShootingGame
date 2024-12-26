@@ -15,19 +15,19 @@ public static class GlovalValue
     public static int MaxHP = 20;
 
     //attack強化値
-    public static int attack = 1;
+    public static int attack = 0;
     //アタック強化倍率
     public static float attackMag = 0.1f;
     
     //スピード
-    public static float speed = 5.0f;
+    public static float speed = 3.0f;
 
     //プレイヤー行動範囲
     public static float xLimit;
     public static float yLimit;
 
     //アビリティナンバー
-    public static int qAvilityNumber = 1;//1,レーザー : 2,ミサイル
+    public static int qAvilityNumber = 2;//1,レーザー : 2,ミサイル
     public static int rightClickAvilityNumber = 1;//1,バリア : 2,防御用ボム
 
     public static int[,] ScoreList = new int[4,5]{
@@ -39,4 +39,5 @@ public static class GlovalValue
 
     public static bool pauseFlag = false;
     
+
 }
