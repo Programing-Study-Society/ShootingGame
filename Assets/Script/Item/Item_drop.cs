@@ -15,10 +15,10 @@ public class Item_drop : MonoBehaviour
     public EnemyStatas enemyStatas;
     void Update()
     {
-        int rnd = Random.Range(0,99); // ※ 0.1～9.9の範囲でランダムな小数点数値が返る
 
         if(enemyStatas.HP <= 0)
         {
+            int rnd = Random.Range(0,100); // ※ 0～99の範囲でランダムな小数点数値が返る
             if(rnd <= perdrop)
             Instantiate(itemPrefab, transform.position,Quaternion.identity);
         }
