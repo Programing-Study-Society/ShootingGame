@@ -26,6 +26,7 @@ public class EnemyStatas : MonoBehaviour
     void Start()
     {
         //scoreをHPの10倍の数値とする
+        HP = GlovalValue.difficultyEnemyHP[GlovalValue.Difficulty - 1] * HP;
         score = (int)(HP * 10);
     }
 
