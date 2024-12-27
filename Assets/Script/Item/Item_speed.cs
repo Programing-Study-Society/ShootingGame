@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Item_speed : MonoBehaviour
 {
-    private float speed;
+    public float speed;
     public PlayerStatas playerstatas;
     private string playerTag = "Player";
     
@@ -17,9 +17,10 @@ public class Item_speed : MonoBehaviour
     {
         // 強化処理、プレイヤーの速さ
         speed += 1;
-
+        playerstatas.SPD += speed;
         // アイテムを消す
         Destroy(this.gameObject);
+
     }
 }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,7 +33,6 @@ public class Item_speed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = playerstatas.SPD;
     }
 
     // Update is called once per frame
