@@ -14,11 +14,10 @@ public class EnemyStatas : MonoBehaviour
     [SerializeField, Header("爆発エフェクト")]
     public GameObject explotionEffect;
 
-    [SerializeField, Header("エネミースコア")]
-    private int score;
+    [HideInInspector]public int score;
 
     [SerializeField, Header("ドロップアイテム")]
-    public GameObject itemPrefab;
+    public List<GameObject> itemPrefab;
 
     [SerializeField, Header("ドロップ確率")]
     public int perdrop;
@@ -40,10 +39,20 @@ public class EnemyStatas : MonoBehaviour
             GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
             int rnd = Random.Range(0,100); // ※ 0～99の範囲でランダムな小数点数値が返る
-            if (itemPrefab != null){
-                if(rnd <= perdrop)Instantiate(itemPrefab, transform.position,Quaternion.identity);
+            int rndpop;
+            Debug.Log(itemPrefab.Count);
+            if(itemPrefab.Count < 2){
+                rndpop = 0;
+            }else{
+                rndpop = Random.Range(0, itemPrefab.Count - 1);
             }
-            
+            if(itemPrefab.Count != 0){
+                if(itemPrefab[rndpop] != null){
+                    if(rnd <= perdrop){
+                        Instantiate(itemPrefab[rndpop], transform.position,Quaternion.identity);
+                    }
+                }
+            }
         }
     }
 }

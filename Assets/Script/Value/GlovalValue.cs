@@ -39,7 +39,13 @@ public static class GlovalValue
 
     public static bool pauseFlag = false;
 
+    //追加
     public static int barrierTime = 0;
-    
 
+    //playerレベル経験値とレベル値
+    public static int playerLevelExperience = 0;
+    public static int playerLevel = 5;
+
+    //どれだけステータスを振ったか
+    public static int addStatasPoint = 0;//ステータスポイント = レベル * 2s
 }

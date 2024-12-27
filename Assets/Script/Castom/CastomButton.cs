@@ -11,6 +11,7 @@ public class CastomButton : MonoBehaviour
     public Text castomQAvilityNumber;
 
     public Text castomBarrierTime;
+    public Text statasPointText;
 
     // Start is called before the first frame update
     void Start()
@@ -40,35 +41,50 @@ public class CastomButton : MonoBehaviour
     }
     public void AttackChengeButton(bool flag){//アタックをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
+            if(NotStatasUp()){
+                return;
+            }
             GlovalValue.attack++;
         }else{
             if(GlovalValue.attack > 0){
                 GlovalValue.attack--;
+                GlovalValue.addStatasPoint--;
             }
         }
         castomAttack.text = "攻撃力:" + (GlovalValue.attack * 10).ToString() + "%";
+        StatasPoint();
     }
 
     public void MaxHPChengeButton(bool flag){//HPをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
+            if(NotStatasUp()){
+                return;
+            }
             GlovalValue.MaxHP++;
         }else{
             if(GlovalValue.MaxHP > 1){
                 GlovalValue.MaxHP--;
+                GlovalValue.addStatasPoint--;
             }
         }
         castomMaxHP.text = "HP:" + GlovalValue.MaxHP.ToString();
+        StatasPoint();
     }
 
     public void SpeedChengeButton(bool flag){//スピードをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
+            if(NotStatasUp()){
+                return;
+            }
             GlovalValue.speed++;
         }else{
             if(GlovalValue.speed > -10){
                 GlovalValue.speed--;
+                GlovalValue.addStatasPoint--;
             }
         }
         castomSpeed.text = "速さ:" + (GlovalValue.speed * 10).ToString() + "%";
+        StatasPoint();
     }
 
     public void RightClickAvilityNumberChengeButton(){//RightClickAvilityを変更する
@@ -93,9 +109,16 @@ public class CastomButton : MonoBehaviour
 
     public void BarrierTimeChengeButton(bool flag){
         if(flag){
+            if(NotStatasUp()){
+                return;
+            }
             GlovalValue.barrierTime++;
         }else{
+            if(GlovalValue.barrierTime < 1){
+                return;
+            }
             GlovalValue.barrierTime--;
+            GlovalValue.addStatasPoint--;
         }
 
         if(GlovalValue.rightClickAvilityNumber == 1){
@@ -103,5 +126,18 @@ public class CastomButton : MonoBehaviour
         }else{
             castomBarrierTime.text = "継続時間:" + (GlovalValue.barrierTime * 0.1).ToString() + "秒増";
         }
+        StatasPoint();
+    }
+
+    public bool NotStatasUp(){
+        if(GlovalValue.addStatasPoint + 1 > GlovalValue.playerLevel * 2){
+            return true;
+        }else{
+            GlovalValue.addStatasPoint++;
+            return false;
+        }
+    }
+    public void StatasPoint(){
+        statasPointText.text = ((GlovalValue.playerLevel * 2) - GlovalValue.addStatasPoint).ToString();
     }
 }
