@@ -14,13 +14,15 @@ public class PlayerStatas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HP = GlovalValue.MaxHP;
-        ATK = GlovalValue.attack;
-        SPD = GlovalValue.speed;
+        StartStatas();
+    }
+    void FixedUpdate(){
+        Debug.Log("ATK:"+ATK);
+        Debug.Log("SPD:"+SPD);
     }
     public void StartStatas(){
         HP = GlovalValue.MaxHP;
         ATK = GlovalValue.attack;
-        SPD = GlovalValue.speed;
+        SPD = 2 + ((float)(GlovalValue.speed * 0.1) * 2);
     }
 }
