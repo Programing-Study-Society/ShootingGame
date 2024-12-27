@@ -95,6 +95,11 @@ public class CastomButton : MonoBehaviour
             GlovalValue.rightClickAvilityNumber = 2;
             castomRightClickAvilityNumber.text = "防御用ボム";
         }
+        if(GlovalValue.rightClickAvilityNumber == 1){
+            castomBarrierTime.text = "継続時間:" + (GlovalValue.barrierTime * 10).ToString() + "%";
+        }else{
+            castomBarrierTime.text = "継続時間:" + (GlovalValue.barrierTime * 0.1).ToString() + "秒増";
+        }
     }
 
     public void QAvilityNumberChengeButton(){//QAvilityを変更する
