@@ -38,6 +38,8 @@ public static class GlovalValue
     };
 
     public static bool pauseFlag = false;
+
+    public static int barrierTime = 0;
     
 
 }

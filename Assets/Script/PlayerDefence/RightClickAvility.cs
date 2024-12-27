@@ -17,6 +17,12 @@ public class RightClickAvility : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(avirityNumber == 1){
+            slider.maxValue = 3.0f + ((float)(GlovalValue.barrierTime * 0.1) * 3.0f);
+        }else if(avirityNumber == 2){
+           slider.maxValue = 1;
+        }
+        
         avirityNumber = GlovalValue.rightClickAvilityNumber;
         slider.value = slider.maxValue;
     }
