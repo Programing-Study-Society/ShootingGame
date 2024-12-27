@@ -492,6 +492,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 913851460}
     m_Modifications:
+    - target: {fileID: 135135956009994265, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2620572931210816384, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: speed
       value: 1
@@ -511,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 2620572931210816385, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: itemPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: 1167771832}
+      objectReference: {fileID: 1187759215}
     - target: {fileID: 2620572931210816387, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: player
       value: 
@@ -939,7 +943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4316502659923598897, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
       propertyPath: perdrop
-      value: 70
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4316502659923598897, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
       propertyPath: itemPrefab
@@ -1593,7 +1597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833108882659689212, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
       propertyPath: itemPrefab.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833108882659689213, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
       propertyPath: m_RootOrder
@@ -1824,7 +1828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e6ca43217dc48842a9469cec749f1a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e5718aa02ca1914cb6385a9e93693b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3778,6 +3782,10 @@ PrefabInstance:
     - target: {fileID: 4316502659923598910, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
       propertyPath: shootTime
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8221167643852962341, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
