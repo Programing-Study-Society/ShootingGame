@@ -82,6 +82,9 @@ public class Stage2 : MonoBehaviour
             else if(waveCount == 6){
                 Wave6();
             }
+            else if(waveCount == 7){
+                Wave7();
+            }
             popCount++;
         }
         else
@@ -136,7 +139,6 @@ public class Stage2 : MonoBehaviour
         //Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 0.5f, GlovalValue.xLimit - 0.5f),Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
     }
     public void Wave4(){
-        lateTime = 1;
         Vector3 pos = popEnemyPos[stageCount];
         pos.y -= (popCount) * 3.0f;
         Pop(popEnemy[stageCount],pos);
@@ -151,8 +153,28 @@ public class Stage2 : MonoBehaviour
     public void Wave6(){
         Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
                                  Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
-        lateTime = 3.5f;
+        lateTime = 3.0f;
     }
+
+    bool boss = true; //Wave7で2体敵を出すため
+    public void Wave7(){
+        if (boss == true)
+        {
+            lateTime = 3.5f;
+            Pop(popEnemy[stageCount], popEnemyPos[stageCount]);
+            boss = false;
+        }
+        else
+        {
+            lateTime = 5.0f;
+            Pop(popEnemy[stageCount], new Vector3(Random.Range(-GlovalValue.xLimit + 1, GlovalValue.xLimit - 1),
+                                 Random.Range(0.0f, GlovalValue.yLimit - 1), 0));
+        }
+    }
+
+
+
+
 
     //エネミーポップ関数
     public void Pop(GameObject enemyObject,Vector3 initialPosition)

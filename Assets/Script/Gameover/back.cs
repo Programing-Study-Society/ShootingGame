@@ -13,6 +13,7 @@ public class back : MonoBehaviour
         void StartGame(){
             ScoreRanking();
             GlovalValue.score = 0;
+            GlovalValue.stageclear = false;
             GlovalValue.HP = GlovalValue.MaxHP;
             SceneManager.LoadScene("Home_Scene"); 
             gameObject.GetComponent<Button>().onClick.AddListener(StartGame);

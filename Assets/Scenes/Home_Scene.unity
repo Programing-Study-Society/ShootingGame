@@ -4920,6 +4920,7 @@ GameObject:
   - component: {fileID: 891490561}
   - component: {fileID: 891490562}
   - component: {fileID: 891490563}
+  - component: {fileID: 891490564}
   m_Layer: 0
   m_Name: StageButtonList
   m_TagString: Untagged
@@ -4973,6 +4974,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonList:
+  - {fileID: 67414694}
+  - {fileID: 145847585}
+  - {fileID: 2009774492}
+  - {fileID: 34179338}
+--- !u!114 &891490564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891490560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5962aee6aa631914c9945e283b51bbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageButtonList:
   - {fileID: 67414694}
   - {fileID: 145847585}
   - {fileID: 2009774492}
@@ -8350,7 +8368,7 @@ MonoBehaviour:
     barrierTime: 0
     playerLevelExperience: 0
     playerLevel: 0
-    stageClearCount: 0
+    firstStageClear: 01000000
     addStatasPoint: 0
 --- !u!4 &1770906112
 Transform:
