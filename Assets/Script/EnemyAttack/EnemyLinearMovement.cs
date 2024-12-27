@@ -33,7 +33,7 @@ public class EnemyLinearMovement: MonoBehaviour
 
     private void Attack(){
         if(playerCollision.IsPlayer()){
-            GlovalValue.HP -= power;
+            GlovalValue.HP -= power * GlovalValue.difficultyEnemyAttack[GlovalValue.Difficulty - 1];
             //Debug.Log(GlovalValue.HP);
             Destroy(this.gameObject);
         }

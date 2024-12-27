@@ -42,7 +42,7 @@ public static class GlovalValue
     public static int playerLevel = 0;
 
     //どのくらいステージをクリアしたか
-    public static List<bool> firstStageClear = new List<bool>{true,false,false,false};
+    public static List<bool> firstStageClear = new List<bool>{true,true,true,true};//本来{true,false,false,false};
 
     //どれだけステータスを振ったか
     public static int addStatasPoint = 0;//ステータスポイント = レベル * 2s
@@ -54,5 +54,8 @@ public static class GlovalValue
     //プレイヤー行動範囲
     public static float xLimit;
     public static float yLimit;
+
+    public static List<int> difficultyEnemyAttack = new List<int>{1,1,2,3};
+    public static List<float> difficultyEnemyHP = new List<float>{0.5f,1.0f,1.5f,2.0f};
 
 }
