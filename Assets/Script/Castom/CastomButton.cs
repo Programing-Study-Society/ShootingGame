@@ -37,7 +37,7 @@ public class CastomButton : MonoBehaviour
         }else{
             castomQAvilityNumber.text = "ミサイル";
         }
-        
+        StatasPoint();
     }
     public void AttackChengeButton(bool flag){//アタックをflagがfalseなら1下げるtrueなら1あげる
         if(flag){
@@ -135,7 +135,7 @@ public class CastomButton : MonoBehaviour
     }
 
     public bool NotStatasUp(){
-        if(GlovalValue.addStatasPoint + 1 > GlovalValue.playerLevel * 2){
+        if(GlovalValue.addStatasPoint + 1 > GlovalValue.playerLevel){
             return true;
         }else{
             GlovalValue.addStatasPoint++;
@@ -143,6 +143,6 @@ public class CastomButton : MonoBehaviour
         }
     }
     public void StatasPoint(){
-        statasPointText.text = ((GlovalValue.playerLevel * 2) - GlovalValue.addStatasPoint).ToString();
+        statasPointText.text = ((GlovalValue.playerLevel) - GlovalValue.addStatasPoint).ToString();
     }
 }

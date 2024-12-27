@@ -17,8 +17,8 @@ public class PlayerStatas : MonoBehaviour
         StartStatas();
     }
     void FixedUpdate(){
-        Debug.Log("ATK:"+ATK);
-        Debug.Log("SPD:"+SPD);
+        //Debug.Log("ATK:"+ATK);
+        //Debug.Log("SPD:"+SPD);
     }
     public void StartStatas(){
         HP = GlovalValue.MaxHP;

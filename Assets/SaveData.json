@@ -1,1 +1,1 @@
-{"Difficulty":1,"score":0,"HP":20,"attack":0,"speed":10.0,"xLimit":0.0,"yLimit":0.0,"qAvilityNumber":2,"rightClickAvilityNumber":1}
+{"Difficulty":1,"score":0,"HP":10,"MaxHP":10,"attack":0,"attackMag":0.10000000149011612,"speed":-3.0,"qAvilityNumber":1,"rightClickAvilityNumber":1,"ScoreList":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2680,250,120,0,0],"barrierTime":0,"playerLevelExperience":50,"playerLevel":2,"stageClearCount":0,"addStatasPoint":2}

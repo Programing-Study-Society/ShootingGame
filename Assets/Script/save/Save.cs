@@ -112,33 +112,46 @@ public class Save : MonoBehaviour
         data.Difficulty = GlovalValue.Difficulty;
         data.score = GlovalValue.score;
         data.HP= GlovalValue.HP;
+        data.MaxHP= GlovalValue.MaxHP;
         data.attack = GlovalValue.attack;
         data.speed = GlovalValue.speed;
-        data.xLimit = GlovalValue.xLimit;
-        data.yLimit = GlovalValue.yLimit;
         data.qAvilityNumber = GlovalValue.qAvilityNumber;
         data.rightClickAvilityNumber = GlovalValue.rightClickAvilityNumber;
-        data.ScoreList = GlovalValue.ScoreList;
-        
+        data.barrierTime = GlovalValue.barrierTime;
+        data.playerLevelExperience = GlovalValue.playerLevelExperience;
+        data.playerLevel = GlovalValue.playerLevel;
+        data.addStatasPoint = GlovalValue.addStatasPoint;
 
-        
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 5; j++){
+                data.ScoreList[(i * 5) + j] = GlovalValue.ScoreList[i,j];
+            }
+            data.firstStageClear[i] = GlovalValue.firstStageClear[i];
+        }
     }
 
     //SaveData??l??GlobalValue????
     public void InGlobalValue()
     {
 
-        GlovalValue.Difficulty=data.Difficulty;
-        GlovalValue.score=data.score;
-        GlovalValue.HP=data.HP;
-        GlovalValue.attack=data.attack;
-        GlovalValue.speed=data.speed;
-        GlovalValue.xLimit=data.xLimit;
-        GlovalValue.yLimit=data.yLimit;
-        GlovalValue.qAvilityNumber=data.qAvilityNumber;
-        GlovalValue.rightClickAvilityNumber=data.rightClickAvilityNumber;
-        GlovalValue.ScoreList=data.ScoreList;
+        GlovalValue.Difficulty = data.Difficulty;
+        GlovalValue.score = data.score;
+        GlovalValue.HP= data.HP;
+        GlovalValue.MaxHP= data.MaxHP;
+        GlovalValue.attack = data.attack;
+        GlovalValue.speed = data.speed;
+        GlovalValue.qAvilityNumber = data.qAvilityNumber;
+        GlovalValue.rightClickAvilityNumber = data.rightClickAvilityNumber;
+        GlovalValue.barrierTime = data.barrierTime;
+        GlovalValue.playerLevelExperience = data.playerLevelExperience;
+        GlovalValue.playerLevel = data.playerLevel;
+        GlovalValue.addStatasPoint = data.addStatasPoint;
 
-        
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 5; j++){
+                GlovalValue.ScoreList[i,j] = data.ScoreList[(i * 5) + j];
+            }
+            GlovalValue.firstStageClear[i] = data.firstStageClear[i];
+        }
     }
 }

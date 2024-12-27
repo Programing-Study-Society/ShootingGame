@@ -2939,10 +2939,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830087066}
     m_Modifications:
-    - target: {fileID: 998245392313551277, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4316502659923598896, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
       propertyPath: m_Name
       value: Wave5Boss
