@@ -6,7 +6,7 @@ public class EnemyAttackDestroy : MonoBehaviour
 {
     public EnemyAttackCollision enemyAttackCollision;
 
-    private float actualTime = 0.1f;
+    private float actualTime = 0.0f;
 
     // Update is called once per frame
     void Update()
@@ -17,10 +17,10 @@ public class EnemyAttackDestroy : MonoBehaviour
     private void Move()
     {
         
-        if(actualTime <= 0){
-            Destroy(this.gameObject);
+        if(actualTime <= (GlovalValue.barrierTime * 0.1) + 0.1){
+            actualTime += Time.deltaTime;
         }else{
-            actualTime -= Time.deltaTime;
+            Destroy(this.gameObject);
         }
         
     }

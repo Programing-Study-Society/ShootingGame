@@ -13,6 +13,10 @@ public class EnemyAttackCollision : MonoBehaviour
 
     public List<GameObject> colList = new List<GameObject> ();
 
+    void Start(){
+        
+    }
+
     void Update()
     {
         Attack();

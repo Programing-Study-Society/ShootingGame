@@ -16,7 +16,7 @@ public class Item_speed : MonoBehaviour
     if (other.gameObject.CompareTag("Player"))
     {
         // 強化処理、プレイヤーの速さ
-        speed += 1;
+        speed += 0.10f;
         playerstatas.SPD += speed;
         // アイテムを消す
         Destroy(this.gameObject);
