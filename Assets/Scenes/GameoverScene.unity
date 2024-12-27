@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 364237815}
   - component: {fileID: 364237814}
   - component: {fileID: 364237817}
+  - component: {fileID: 364237818}
   m_Layer: 5
   m_Name: Backbutton
   m_TagString: Untagged
@@ -466,6 +467,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 364237818}
+        m_TargetAssemblyTypeName: LevelUp, Assembly-CSharp
+        m_MethodName: LevelUpOnButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
@@ -528,6 +541,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f0f6d722d477a468a19d74de6ce3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &364237818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364237812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d781c254b3aca574fb9ad9a2335f4554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &409991868
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +566,7 @@ GameObject:
   - component: {fileID: 409991871}
   - component: {fileID: 409991870}
   - component: {fileID: 409991873}
+  - component: {fileID: 409991874}
   m_Layer: 5
   m_Name: continuebutton
   m_TagString: Untagged
@@ -613,6 +639,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 409991874}
+        m_TargetAssemblyTypeName: LevelUp, Assembly-CSharp
+        m_MethodName: LevelUpOnButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 409991873}
         m_TargetAssemblyTypeName: Continue, Assembly-CSharp
         m_MethodName: BackToBeforeScene
@@ -673,6 +711,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9350a47a7145e084382490f5913ab04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &409991874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409991868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d781c254b3aca574fb9ad9a2335f4554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &418216665
@@ -828,6 +878,7 @@ GameObject:
   - component: {fileID: 511447561}
   - component: {fileID: 511447563}
   - component: {fileID: 511447562}
+  - component: {fileID: 511447564}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -897,6 +948,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511447560}
   m_CullTransparentMesh: 1
+--- !u!114 &511447564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511447560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b310bd7e4a5f454f9e77b8eb8f4546a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 511447562}
 --- !u!1 &568753009
 GameObject:
   m_ObjectHideFlags: 0

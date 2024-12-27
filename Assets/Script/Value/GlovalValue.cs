@@ -4,48 +4,55 @@ using UnityEngine;
 
 public static class GlovalValue
 {
-    //難易度@1:easy,2:normal,3:hard,4:master
+    //難易度 1:easy,2:normal,3:hard,4:master
     public static int Difficulty = 0;
     
     //スコア
     public static int score = 0;
 
     //ヒットポイント
-    public static int HP = 20;
-    public static int MaxHP = 20;
+    public static int HP = 5;
+    public static int MaxHP = 5;
 
     //attack強化値
     public static int attack = 0;
     //アタック強化倍率
-    public static float attackMag = 0.1f;
+    public static float attackMag = 0.100f;
     
     //スピード
-    public static float speed = 3.0f;
+    public static float speed = 0.0f;
 
-    //プレイヤー行動範囲
-    public static float xLimit;
-    public static float yLimit;
-
+    
     //アビリティナンバー
-    public static int qAvilityNumber = 2;//1,レーザー : 2,ミサイル
+    public static int qAvilityNumber = 1;//1,レーザー : 2,ミサイル
     public static int rightClickAvilityNumber = 1;//1,バリア : 2,防御用ボム
 
     public static int[,] ScoreList = new int[4,5]{
-        {0,1,2,3,4},
-        {5,6,7,8,9},
-        {10,11,12,13,14},
-        {15,16,17,18,19}
+        {0,0,0,0,0},
+        {0,0,0,0,0},
+        {0,0,0,0,0},
+        {0,0,0,0,0}
     };
-
-    public static bool pauseFlag = false;
 
     //追加
     public static int barrierTime = 0;
 
     //playerレベル経験値とレベル値
     public static int playerLevelExperience = 0;
-    public static int playerLevel = 5;
+    public static int playerLevel = 0;
+
+    //どのくらいステージをクリアしたか
+    public static List<bool> firstStageClear = new List<bool>{true,false,false,false};
 
     //どれだけステータスを振ったか
     public static int addStatasPoint = 0;//ステータスポイント = レベル * 2s
+
+    //保存しなくていいやつ
+    public static bool pauseFlag = false;
+    public static bool stageclear = false;
+
+    //プレイヤー行動範囲
+    public static float xLimit;
+    public static float yLimit;
+
 }

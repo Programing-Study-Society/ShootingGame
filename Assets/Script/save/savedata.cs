@@ -13,29 +13,43 @@ public class ObjectData
 [System.Serializable]
 public class SaveData
 {
-    //???x????@1:easy,2:normal,3:hard,4:master
-    public int Difficulty = 1;
+    //難易度 1:easy,2:normal,3:hard,4:master
+    public int Difficulty = 0;
     
-    //?X?R?A???
+    //スコア
     public int score = 0;
 
-    //?v???C???[?X?e?[?^?X
+    //ヒットポイント
     public int HP = 5;
-    public int attack = 1;
-    public float speed = 10.0f;
+    public int MaxHP = 5;
 
-    //?v???C???[?????????
-    public float xLimit;
-    public float yLimit;
+    //attack強化値
+    public int attack = 0;
+    //アタック強化倍率
+    public float attackMag = 0.100f;
+    
+    //スピード
+    public float speed = 0.0f;
 
-    //????????????
-    public int qAvilityNumber = 2;//1,???? : 2,????
-    public int rightClickAvilityNumber = 2;//1,??? : 2,?????
+    
 
-    public int[,] ScoreList = new int[4,5]{
-        {0,1,2,3,4},
-        {5,6,7,8,9},
-        {10,11,12,13,14},
-        {15,16,17,18,19}
-    };
+    //アビリティナンバー
+    public int qAvilityNumber = 1;//1,レーザー : 2,ミサイル
+    public int rightClickAvilityNumber = 1;//1,バリア : 2,防御用ボム
+
+    public List<int> ScoreList = new List<int>{ 0,0,0,0,0,
+                                                0,0,0,0,0,
+                                                0,0,0,0,0,
+                                                0,0,0,0,0};
+
+    public int barrierTime = 0;
+
+    //playerレベル経験値とレベル値
+    public int playerLevelExperience = 0;
+    public int playerLevel = 0;
+
+    public List<bool> firstStageClear = new List<bool>{true,false,false,false};
+
+    //どれだけステータスを振ったか
+    public int addStatasPoint = 0;//ステータスポイント = レベル * 2s
 }

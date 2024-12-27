@@ -12,8 +12,22 @@ public class Continue : MonoBehaviour
     // 今回の場合は、コンティニューボタンを押した時にこのメソッドを実行する。
     public void BackToBeforeScene()
     {
-        SceneManager.LoadScene(comeGameover.sceneName);
+        ScoreRanking();
         GlovalValue.HP = GlovalValue.MaxHP;
         GlovalValue.score = 0;
+        GlovalValue.stageclear = false;
+        SceneManager.LoadScene(comeGameover.sceneName);
+    }
+
+    public void ScoreRanking(){
+        for(int i = 0; i < 5; i++){
+            if(GlovalValue.ScoreList[comeGameover.count,i] < GlovalValue.score){
+                for(int j = 4; j > i; j--){
+                    GlovalValue.ScoreList[comeGameover.count,j] = GlovalValue.ScoreList[comeGameover.count,j - 1];
+                }
+                GlovalValue.ScoreList[comeGameover.count,i] = GlovalValue.score;
+                break;
+            } 
+        }
     }
 }

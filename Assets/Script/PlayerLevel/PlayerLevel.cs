@@ -8,7 +8,6 @@ public class PlayerLevel : MonoBehaviour
     public Slider levelSlider;
     public Text levelText;
     public Text levelExperienceText;
-    public Text statasPointText;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +22,17 @@ public class PlayerLevel : MonoBehaviour
 
     public void LevelDisplay(){
         //テキスト表示
-        if(GlovalValue.playerLevel * 1000 <= 20000){
-            levelExperienceText.text = GlovalValue.playerLevelExperience.ToString() + "/" + (GlovalValue.playerLevel * 1000).ToString();
+        if((GlovalValue.playerLevel + 1) * 1000 <= 20000){
+            levelExperienceText.text = GlovalValue.playerLevelExperience.ToString() + "/" + ((GlovalValue.playerLevel + 1) * 1000).ToString();
         }
         else{
             levelExperienceText.text = GlovalValue.playerLevelExperience.ToString() + "/" + (20000).ToString();
         }
         levelText.text = GlovalValue.playerLevel.ToString();
-        statasPointText.text = ((GlovalValue.playerLevel * 2) - GlovalValue.addStatasPoint).ToString();
 
         //スライダー表示
-        if(GlovalValue.playerLevel * 1000 <= 20000){
-            levelSlider.maxValue = (GlovalValue.playerLevel * 1000);
+        if((GlovalValue.playerLevel + 1) * 1000 <= 20000){
+            levelSlider.maxValue = ((GlovalValue.playerLevel + 1) * 1000);
         }
         else{
             levelSlider.maxValue = 20000;
