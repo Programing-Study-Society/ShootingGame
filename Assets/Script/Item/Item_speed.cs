@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Item_speed : MonoBehaviour
 {
-    private float speed;
-    public moveController control;
+    public float speed;
+    public PlayerStatas playerstatas;
     private string playerTag = "Player";
     
     void OnTriggerEnter2D(Collider2D other)
@@ -16,10 +16,11 @@ public class Item_speed : MonoBehaviour
     if (other.gameObject.CompareTag("Player"))
     {
         // 強化処理、プレイヤーの速さ
-        control.speed *= 2;
-
+        speed += 1;
+        playerstatas.SPD += speed;
         // アイテムを消す
         Destroy(this.gameObject);
+
     }
 }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,7 +33,6 @@ public class Item_speed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = control.speed;
     }
 
     // Update is called once per frame
