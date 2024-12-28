@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class startButton : MonoBehaviour {  
     
-    public GameObject gameObject;
+    //public GameObject gameObject;
 
     //始まった時に実行する関数　　
     void Start () {
@@ -26,7 +26,7 @@ public class startButton : MonoBehaviour {
         else {
             //ボタンが押された時、StartGame関数を実行　
             gameObject.GetComponent<Button>().onClick.AddListener(StartGame); 
-            // StartGame関数　
+            // StartGame関数
             void StartGame() { 
                 // GameSceneをロード　
                 SceneManager.LoadScene("Home_Scene"); 

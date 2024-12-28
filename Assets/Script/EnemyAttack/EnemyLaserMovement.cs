@@ -13,10 +13,7 @@ public class EnemyLaserMovement : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector3 thisScale;
 
-    private float actualTime = 2.0f;
-
-    private float lateTime = 1.0f;
-    private float time = 0.7f;
+    private float actualTime = 0.0f;
     public PlayerCollision playerCollision;
 
     // Start is called before the first frame update
@@ -28,36 +25,29 @@ public class EnemyLaserMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
-        time += Time.deltaTime;
-
-        //lateTime以下なら実行しない
-        if (time < lateTime)
-        {
-            return;
-        }
         Attack();
     }
 
     private void Move()
     {
         rigid.velocity = transform.up * speed;
-        thisScale.y += speed / 100;
+        thisScale.y += speed / 40;
         this.transform.localScale = thisScale;
-        if(actualTime <= 0){
+        if(actualTime >= 1.0f){
             Destroy(this.gameObject);
         }else{
-            actualTime -= Time.deltaTime;
+            actualTime += Time.deltaTime;
         }
         
     }
 
     private void Attack(){
         if(playerCollision.IsPlayer()){
-            GlovalValue.HP -= power;
-            time = 0.0f;
+            GlovalValue.HP -= power * GlovalValue.difficultyEnemyAttack[GlovalValue.Difficulty - 1];
+            Destroy(this.gameObject);
             //Debug.Log(GlovalValue.HP);
         }
     }

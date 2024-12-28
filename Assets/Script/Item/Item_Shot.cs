@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Item_Shot : MonoBehaviour
 {    
-    public static int attack = 1;
+   public PlayerStatas playerstatas;
     public moveController control;
     private string playerTag = "Player";
+
+    public int attack;
 
     void OnTriggerEnter2D(Collider2D other)
 {
     if (other.gameObject.CompareTag("Player"))
     {
-        // 弾の強化処理
-        attack += 1;
+        // 弾のダメージ強化処理
+        playerstatas.ATK += 1;
 
         // アイテムを消す
         Destroy(this.gameObject);
@@ -29,7 +31,7 @@ public class Item_Shot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

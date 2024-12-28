@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"Difficulty":2,"score":0,"HP":20,"attack":1,"speed":10.0,"xLimit":0.0,"yLimit":0.0,"qAvilityNumber":2,"rightClickAvilityNumber":1}
+=======
+{"Difficulty":4,"score":0,"HP":5,"MaxHP":5,"attack":0,"attackMag":0.10000000149011612,"speed":0.0,"qAvilityNumber":1,"rightClickAvilityNumber":1,"ScoreList":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"barrierTime":0,"playerLevelExperience":0,"playerLevel":0,"firstStageClear":[true,true,true,true],"addStatasPoint":0}
+>>>>>>> 331ada4f87cd4325b42d64a82d3446d750258d3e

@@ -10,15 +10,17 @@ public class LaserMovement : MonoBehaviour
     [SerializeField, Header("ダメージ")]
     private float power;
 
+    [SerializeField, Header("PlayerStatas")]public PlayerStatas playerStatas;
+
     public EnemyCollision enemyCollision;
 
     private Rigidbody2D rigid;
     private Vector3 thisScale;
 
-    private float actualTime = 2.0f;
+    private float actualTime = 0.0f;
 
-    private float lateTime = 0.45f;
-    private float time = 0.0f;
+    private float lateTime = 0.4f;
+    private float time = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,7 @@ public class LaserMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
         time += Time.deltaTime;
@@ -40,18 +42,17 @@ public class LaserMovement : MonoBehaviour
             return;
         }
         Attack();
-        time = 0.0f;
     }
 
     private void Move()
     {
         rigid.velocity = transform.up * speed;
-        thisScale.y += speed / 100;
+        thisScale.y += speed / 30;
         this.transform.localScale = thisScale;
-        if(actualTime <= 0){
+        if(actualTime >= 1.0f){
             Destroy(this.gameObject);
         }else{
-            actualTime -= Time.deltaTime;
+            actualTime += Time.deltaTime;
         }
         
     }
@@ -61,10 +62,12 @@ public class LaserMovement : MonoBehaviour
             for(int i = 0; i < enemyCollision.colList.Count ; i++){
                 if (enemyCollision.colList[i] != null){
                     EnemyStatas enemyStatas = enemyCollision.colList[i].GetComponent<EnemyStatas>();
-                    enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
-                
+                    enemyStatas.HP -= power + power * (float)(playerStatas.ATK * GlovalValue.attackMag);
+                    time = 0.0f;
+                    //Debug.Log(enemyStatas.HP);
                 }
-            } 
+            }
+            //Debug.Log("当たった"); 
         }
         
     } 

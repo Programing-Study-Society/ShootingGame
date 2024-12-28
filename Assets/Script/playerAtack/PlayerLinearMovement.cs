@@ -10,6 +10,7 @@ public class PlayerLinearMovement: MonoBehaviour
     private float power;
 
     public EnemyCollision enemyCollision;
+    public PlayerStatas playerStatas;
 
     private Rigidbody2D rigid;
 
@@ -35,7 +36,7 @@ public class PlayerLinearMovement: MonoBehaviour
         if(enemyCollision.IsEnemy()){
             if (enemyCollision.CollisionObject != null){
                 EnemyStatas enemyStatas = enemyCollision.CollisionObject.GetComponent<EnemyStatas>();
-                enemyStatas.HP -= power + power * (float)(GlovalValue.attack * GlovalValue.attackMag);
+                enemyStatas.HP -= power + (power * (float)(playerStatas.ATK * GlovalValue.attackMag));
                 Destroy(this.gameObject);
             }
         }
