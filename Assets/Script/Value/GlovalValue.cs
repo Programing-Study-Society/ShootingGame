@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GlovalValue
 {
     //難易度 1:easy,2:normal,3:hard,4:master
-    public static int Difficulty = 0;
+    public static int Difficulty = 1;
     
     //スコア
     public static int score = 0;
@@ -46,6 +46,10 @@ public static class GlovalValue
 
     //どれだけステータスを振ったか
     public static int addStatasPoint = 0;//ステータスポイント = レベル * 2s
+
+    //音量
+    public static float bgmVolume = 0.1f;
+    public static float seVolume = 0.25f;
 
     //保存しなくていいやつ
     public static bool pauseFlag = false;
