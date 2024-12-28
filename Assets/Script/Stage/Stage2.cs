@@ -110,12 +110,13 @@ public class Stage2 : MonoBehaviour
                     //stageCountがエネミー数より多ければクリアそうでなければ次のステージ番号表示
                     if (stageCount >= popEnemy.Count)
                     {
-                        Debug.Log("CLEAR");
+                        //Debug.Log("CLEAR");
+                        GlovalValue.stageclear = true;
                     }
                     else
                     {
                         waveCount += 1;
-                        Debug.Log("stage:" + waveCount);
+                        //Debug.Log("stage:" + waveCount);
                         popCount = 0;
                     }
 

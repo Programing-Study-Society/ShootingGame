@@ -243,6 +243,10 @@ PrefabInstance:
       value: "Wave1\u6A5F\u4F53"
       objectReference: {fileID: 0}
     - target: {fileID: 4316502659923598897, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316502659923598897, guid: 0684414341b653c4bb0395f5105afe57, type: 3}
       propertyPath: perdrop
       value: 70
       objectReference: {fileID: 0}
@@ -356,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 1339252793}
     - target: {fileID: 2620572931210816385, guid: 1e8f1d54d54a3ce4c8239dd015344f4e, type: 3}
       propertyPath: HP
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2620572931210816385, guid: 1e8f1d54d54a3ce4c8239dd015344f4e, type: 3}
       propertyPath: perdrop
@@ -1310,7 +1314,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2023,6 +2027,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830087066}
     m_Modifications:
+    - target: {fileID: 2620572931210816385, guid: d7afddd975e40384087d23dc32f45151, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2620572931210816385, guid: d7afddd975e40384087d23dc32f45151, type: 3}
       propertyPath: perdrop
       value: 50
@@ -3440,6 +3448,10 @@ PrefabInstance:
       value: "Wave3\u30E9\u30F3\u30C0\u30E0\u653B\u6483\u6A5F\u4F53 "
       objectReference: {fileID: 0}
     - target: {fileID: 4316502659923598897, guid: e40482334ca01094fb461b78f8f4b605, type: 3}
+      propertyPath: HP
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316502659923598897, guid: e40482334ca01094fb461b78f8f4b605, type: 3}
       propertyPath: perdrop
       value: 50
       objectReference: {fileID: 0}
@@ -3611,6 +3623,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1830087066}
     m_Modifications:
+    - target: {fileID: 2620572931210816385, guid: 6a1ae8e9429fea8409dad9bae7d30221, type: 3}
+      propertyPath: HP
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2620572931210816385, guid: 6a1ae8e9429fea8409dad9bae7d30221, type: 3}
       propertyPath: perdrop
       value: 50
@@ -4462,6 +4478,10 @@ PrefabInstance:
       value: Wave5Boss
       objectReference: {fileID: 0}
     - target: {fileID: 4316502659923598897, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
+      propertyPath: HP
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316502659923598897, guid: 665839d08e8ee264c9ec350cd91aaeeb, type: 3}
       propertyPath: explotionEffect
       value: 
       objectReference: {fileID: 1209352685}
@@ -4816,7 +4836,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2000851624}
   - component: {fileID: 2000851625}
-  - component: {fileID: 2000851626}
   - component: {fileID: 2000851627}
   m_Layer: 0
   m_Name: stageGimmick
@@ -4872,25 +4891,6 @@ MonoBehaviour:
   - {x: 0, y: 3, z: 0}
   popEnemyWave: 010000000200000003000000030000000400000005000000
   lateTime: 0.5
---- !u!114 &2000851626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000851622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1356c98ba9f6b0843b23945b9e2f219d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyCollision: {fileID: 661221024}
-  mainCamera: {fileID: 1901999991}
-  popEnemy:
-  - {fileID: 315983925}
-  - {fileID: 268275201}
-  popEnemyCount: 0100000001000000
-  lateTime: 1
 --- !u!114 &2000851627
 MonoBehaviour:
   m_ObjectHideFlags: 0

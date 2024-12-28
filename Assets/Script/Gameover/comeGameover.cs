@@ -29,7 +29,7 @@ public static class comeGameover
         else if(sceneName == "Stage4"){
             count = 3;
         }
-        Debug.Log(sceneName);
-        Debug.Log(count);
+        //Debug.Log(sceneName);
+        //Debug.Log(count);
     }
 }

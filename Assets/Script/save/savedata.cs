@@ -48,7 +48,7 @@ public class SaveData
     public int playerLevelExperience = 0;
     public int playerLevel = 0;
 
-    public List<bool> firstStageClear = new List<bool>{true,true,true,true};//本来{true,false,false,false};
+    public List<bool> firstStageClear = new List<bool>{true,false,false,false};//本来{true,false,false,false};
 
     //どれだけステータスを振ったか
     public int addStatasPoint = 0;//ステータスポイント = レベル * 2s
