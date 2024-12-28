@@ -5,7 +5,7 @@ using UnityEngine;
 public static class GlovalValue
 {
     //難易度 1:easy,2:normal,3:hard,4:master
-    public static int Difficulty = 0;
+    public static int Difficulty = 1;
     
     //スコア
     public static int score = 0;
