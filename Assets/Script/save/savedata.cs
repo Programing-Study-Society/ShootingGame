@@ -52,4 +52,8 @@ public class SaveData
 
     //どれだけステータスを振ったか
     public int addStatasPoint = 0;//ステータスポイント = レベル * 2s
+
+    //音量
+    public float bgmVolume = 0.1f;
+    public float seVolume = 0.25f;
 }
