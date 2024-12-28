@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: shootTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2620572931210816412, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0cb6afdb252d4b4f9ed620e3083e6f8, type: 3}
     - target: {fileID: 2620572931210816413, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -723,6 +727,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4316502659923598909, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0cb6afdb252d4b4f9ed620e3083e6f8, type: 3}
     - target: {fileID: 4316502659923598910, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
       propertyPath: player
       value: 
@@ -784,6 +792,10 @@ PrefabInstance:
       propertyPath: shootTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2620572931210816412, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4439b5072f93c3046a9573eba4c0c978, type: 3}
     - target: {fileID: 2620572931210816413, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -881,7 +893,7 @@ PrefabInstance:
     - target: {fileID: 2620572931210816387, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: attack1
       value: 
-      objectReference: {fileID: 6688625775410832276, guid: f5fa847906f44e646a7f95b5a0c4c7dc, type: 3}
+      objectReference: {fileID: 6688625775410832276, guid: 0406c028922a418418e6958d04ba0b8b, type: 3}
     - target: {fileID: 2620572931210816387, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -890,6 +902,10 @@ PrefabInstance:
       propertyPath: shootTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2620572931210816412, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09688e8c6c75a75498608e23e1937f3b, type: 3}
     - target: {fileID: 2620572931210816413, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1110,6 +1126,10 @@ PrefabInstance:
       propertyPath: shootTime
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2620572931210816412, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d40baf146952f7c49b92d2309875431a, type: 3}
     - target: {fileID: 2620572931210816413, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1244,6 +1264,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4316502659923598909, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d40baf146952f7c49b92d2309875431a, type: 3}
     - target: {fileID: 4316502659923598910, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
       propertyPath: player
       value: 
@@ -1415,7 +1439,7 @@ MonoBehaviour:
   - {fileID: 1187759215}
   - {fileID: 970891153}
   - {fileID: 1733920293}
-  popEnemyCount: 0100000001000000010000000100000001000000010000000100000001000000010000000a000000
+  popEnemyCount: 0300000003000000050000000500000001000000010000000a0000000a000000010000000a000000
   popEnemyPos:
   - {x: 10, y: 0, z: 0}
   - {x: -10, y: 0, z: 0}
@@ -1436,7 +1460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751840167}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a720ec091c48e0e46bf8c4e5664e7a1a, type: 3}
   m_Name: 
@@ -1887,6 +1911,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833108882659689214, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0cb6afdb252d4b4f9ed620e3083e6f8, type: 3}
+    - target: {fileID: 833108882659689214, guid: af7875ded35d0104c9c2e86ade906e14, type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
@@ -2282,6 +2310,10 @@ PrefabInstance:
       propertyPath: shootTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2620572931210816412, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c204ca241dec39b41976a449ebd4dab2, type: 3}
     - target: {fileID: 2620572931210816413, guid: 226365ed85d979d43b91452fa4c1333a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4247,6 +4279,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4316502659923598909, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ced754426a3419c48bd1f7da30628b16, type: 3}
     - target: {fileID: 4316502659923598910, guid: b10bd7ef6d635b846b15d8ae3423ec30, type: 3}
       propertyPath: player
       value: 

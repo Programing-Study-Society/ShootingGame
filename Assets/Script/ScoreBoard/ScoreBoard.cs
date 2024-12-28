@@ -12,6 +12,7 @@ public class ScoreBoard : MonoBehaviour
 
     public int StageSelect;
     public string stageName;
+    public GameObject scoreboard;
 
     public void OnClick()
     {
@@ -21,7 +22,7 @@ public class ScoreBoard : MonoBehaviour
         score_text.text += "3st : " + GlovalValue.ScoreList[StageSelect-1,2].ToString()+"\n\n";
         score_text.text += "4st : " + GlovalValue.ScoreList[StageSelect-1,3].ToString()+"\n\n";
         score_text.text += "5st : " + GlovalValue.ScoreList[StageSelect-1,4].ToString();
-
+        
         //ScoreList[0,0]
 
     }
