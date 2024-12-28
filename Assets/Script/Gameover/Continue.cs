@@ -14,5 +14,6 @@ public class Continue : MonoBehaviour
     {
         SceneManager.LoadScene(comeGameover.sceneName);
         GlovalValue.HP = GlovalValue.MaxHP;
+        GlovalValue.score = 0;
     }
 }
