@@ -45,6 +45,7 @@ public class RightClickAvility : MonoBehaviour
             if(slider.value > 0){
                 slider.value -= Time.deltaTime;
                 avirityList[0].SetActive(true);
+
             }else{
                 avirityList[0].SetActive(false);
             }

@@ -41,7 +41,7 @@ public class EnemyStatas : MonoBehaviour
             Destroy(effect, 0.5f);
             int rnd = Random.Range(0,100); // ※ 0～99の範囲でランダムな小数点数値が返る
             int rndpop;
-            Debug.Log(itemPrefab.Count);
+            //Debug.Log(itemPrefab.Count);
             if(itemPrefab.Count < 2){
                 rndpop = 0;
             }else{

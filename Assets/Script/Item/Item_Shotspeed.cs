@@ -8,12 +8,14 @@ public class Item_Shotspeed : MonoBehaviour
     public moveController control;
     public bool attackStrengthening;
     private string playerTag = "Player";
+    public AudioSource itemSE;
     void OnTriggerEnter2D(Collider2D other)
 {
     if (other.gameObject.CompareTag("Player"))
     {
         // 強化処理、プレイヤーの弾の速度を上げる？発射速度？
         Shotspeed.attackStrengthening = true;
+        itemSE.Play();
 
         // アイテムを消す
         Destroy(this.gameObject);
