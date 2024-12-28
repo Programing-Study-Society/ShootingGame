@@ -18,12 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Home_Scene.unity
     guid: cec09945e4d3c09439b48fe7efb95a1d
   - enabled: 1
-    path: Assets/Scenes/ItemScene.unity
-    guid: 8b6fbf5ebf6e8af45a471510f7097a55
-  - enabled: 1
-    path: Assets/Scenes/GameScene1.unity
-    guid: db5e0ca55a910f5498bc24ad9ddcb031
-  - enabled: 1
     path: Assets/Scenes/Stage1.unity
     guid: 7b8cd1e3bf2fe7b4b80e55448dd2d0b3
   - enabled: 1

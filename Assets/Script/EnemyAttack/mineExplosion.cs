@@ -12,6 +12,7 @@ public class mineExplosion : MonoBehaviour
 
     [SerializeField, Header("�����G�t�F�N�g")]
     public GameObject explotionEffect;
+    //public AudioSource explotionSE;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class mineExplosion : MonoBehaviour
         {
             GlovalValue.HP -= power;
             //Debug.Log(GlovalValue.HP);
+            //explotionSE.Play();
             Destroy(gameObject);
             GameObject effect = Instantiate(explotionEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);

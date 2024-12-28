@@ -8,12 +8,16 @@ public class Item_heal : MonoBehaviour
     public int playerHP;
     //public moveController control;
     private string playerTag = "Player";
+
+    public AudioSource itemSE;
     void OnTriggerEnter2D(Collider2D other)
 {
     if (other.gameObject.CompareTag("Player"))
     {
         // 強化処理
         GlovalValue.HP += 1;
+
+        itemSE.Play();
 
         // アイテムを消す
         Destroy(this.gameObject);

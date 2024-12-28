@@ -10,12 +10,16 @@ public class Item_Shot : MonoBehaviour
 
     public int attack;
 
+    public AudioSource itemSE;
+
     void OnTriggerEnter2D(Collider2D other)
 {
     if (other.gameObject.CompareTag("Player"))
     {
         // 弾のダメージ強化処理
         playerstatas.ATK += 1;
+
+        itemSE.Play();
 
         // アイテムを消す
         Destroy(this.gameObject);
